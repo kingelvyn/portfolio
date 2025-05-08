@@ -2,7 +2,7 @@
 /server
 *.exe
 *.out
-*./jpeg
+*.jpeg
 
 # Dependency directories
 /vendor/
