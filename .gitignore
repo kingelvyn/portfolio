@@ -2,7 +2,6 @@
 /server
 *.exe
 *.out
-*.jpeg
 
 # Dependency directories
 /vendor/
@@ -14,3 +13,6 @@
 # OS files
 .DS_Store
 Thumbs.db
+
+# Images
+static/images/*
