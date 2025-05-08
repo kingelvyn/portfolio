@@ -20,7 +20,7 @@ func main() {
 
 	// Serve static files
 	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static", http.StripPrefix("/static", fs))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	log.Println("Server starting @ :3000...")
 	err := http.ListenAndServe(":3000", nil)
