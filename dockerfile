@@ -19,7 +19,7 @@ RUN go build -o portfolio .
 FROM alpine:latest
 
 # Adding user
-RUN useradd -m elvyn
+RUN useradd -D -h /home/elvyn elvyn
 
 # Copy binary & necessary assets
 COPY --from=builder /app/portfolio .
