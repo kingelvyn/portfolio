@@ -1,8 +1,8 @@
 # Use the official Go image to build
 FROM golang:1.21-alpine as builder
 
-# Install shadow package including adduser
-RUN apk add --no-cache shadow
+# Install packages for build stage
+RUN apk add --no-cache git
 
 WORKDIR /app
 
@@ -21,8 +21,11 @@ RUN go build -o portfolio .
 # Use a minimal image to run
 FROM alpine:latest
 
+# Install adduser for final image
+RUN apk add --no-cache shadow
+
 # Adding user
-RUN useradd -D -h /home/elvyn elvyn
+RUN adduser -D -h /home/elvyn elvyn
 
 # Copy binary & necessary assets
 COPY --from=builder /app/portfolio .
