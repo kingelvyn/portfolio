@@ -30,6 +30,7 @@ RUN apk add --no-cache ca-certificates
 RUN adduser -D -h /home/elvyn elvyn
 
 # Copy binary & necessary assets
+COPY --from=builder /app/portfolio .
 COPY --from=builder /app/static ./static
 COPY --from=builder /app/templates ./templates
 COPY --from=builder /app/content ./content
