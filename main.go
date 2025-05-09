@@ -31,8 +31,8 @@ var projects = []Project{
 		Description:  "Lead a team to design and manufacture an all-terrain payload delivery drone.",
 		Content:      "WIP",
 		Technologies: []string{},
-		Image:        "WIP",
-		Video:        "WIP",
+		Image:        "/static/images/hkaerial.jpg",
+		Video:        "https://lsumail2-my.sharepoint.com/:v:/r/personal/ecacha1_lsu_edu/Documents/Flight%20Videos/Comp%20p1.MP4?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=JxrUbc",
 	},
 	{
 		Title:       "Portfoli-Go",
