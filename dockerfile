@@ -1,6 +1,9 @@
 # Use the official Go image to build
 FROM golang:1.21-alpine as builder
 
+# Install shadow package including adduser
+RUN apk add --no-cache shadow
+
 WORKDIR /app
 
 # Copy go files
