@@ -6,16 +6,45 @@ import (
 )
 
 type Project struct {
-	Title       string
-	Description string
-	Slug        string
-	Image       string
+	Title        string
+	Description  string
+	Slug         string
+	Image        string
+	Content      string
+	Technologies []string
 }
 
 var projects = []Project{
-	{Title: "HK Aerial", Slug: "hk-aerial", Description: "Lead a team to design and manufacture an all-terrain payload delivery drone."},
-	{Title: "Portfoli-Go", Slug: "portfolio", Description: "Self-hosted portfolio using Go"},
-	{Title: "Homelab", Slug: "homelab", Description: "Home server running Proxmox hypervisor with LXC's, Docker, and Samba share ZFS pool via DAS (direct attached storage)."},
+	{
+		Title:       "HK Aerial",
+		Slug:        "hk-aerial",
+		Description: "Lead a team to design and manufacture an all-terrain payload delivery drone.",
+	},
+	{
+		Title:       "Portfoli-Go",
+		Slug:        "portfolio",
+		Description: "Self-hosted portfolio using Go",
+	},
+	{
+		Title:       "Homelab",
+		Slug:        "homelab",
+		Description: "Home server running Proxmox hypervisor with LXC's, Docker, and Samba share ZFS pool via DAS (direct attached storage).",
+	},
+	{
+		Title:       "Satisfaction75 Build",
+		Slug:        "satisfaction75",
+		Description: "Somewhat in-depth build log on friend's keyboard, Satisfaction75.",
+	},
+	{
+		Title:       "Direct-Attached Storage",
+		Slug:        "das",
+		Description: "Implementing a DAS to my homelab to expand storage",
+	},
+	{
+		Title:       "ESP-32 Cam + Object Detection",
+		Slug:        "home-cam",
+		Description: "Utilizing an ESP-32 Cam module to develop a home surveillance camera with object detection capabilities",
+	},
 }
 
 func main() {
