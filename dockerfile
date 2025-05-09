@@ -8,13 +8,13 @@ RUN apk add --no-cache git
 
 # Copy go files
 COPY go.mod go.sum ./
-RUN go mod download
+RUN go mod tidy
 
 # Copy rest of code
 COPY . .
 
 # Disables CGO
-RUN CGO_ENABLED=0
+ENV CGO_ENABLED=0
 # Build the Go app
 RUN go build -o portfolio .
 
@@ -24,7 +24,7 @@ FROM alpine:latest
 WORKDIR /app
 
 # Install adduser for final image
-RUN apk add --no-cache shadow
+RUN apk add --no-cache ca-certificates
 
 # Adding user
 RUN adduser -D -h /home/elvyn elvyn
