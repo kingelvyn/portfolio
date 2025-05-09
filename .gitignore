@@ -19,4 +19,5 @@ static/images/*
 
 # Remove deprecated files
 templates/projects/*
+templates/project-deprecated.html
 !templates/projects/.gitkeep
