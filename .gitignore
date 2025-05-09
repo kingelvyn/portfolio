@@ -14,5 +14,5 @@
 .DS_Store
 Thumbs.db
 
-# Images
+# Images, comment to avoid uploading images
 static/images/*
