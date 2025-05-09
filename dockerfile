@@ -33,6 +33,7 @@ RUN adduser -D -h /home/elvyn elvyn
 COPY --from=builder /app/portfolio .
 COPY --from=builder /app/static ./static
 COPY --from=builder /app/templates ./templates
+COPY --from=builder /app/content ./content
 
 # Expose port 3000
 EXPOSE 3000
