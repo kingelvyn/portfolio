@@ -16,3 +16,6 @@ Thumbs.db
 
 # Images, comment to avoid uploading images
 static/images/*
+
+# Remove deprecated files
+projects/*
