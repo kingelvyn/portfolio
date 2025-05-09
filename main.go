@@ -9,18 +9,20 @@ import (
 )
 
 type Project struct {
-	Title string
-	Slug  string
+	Title       string
+	Description string
+	Slug        string
+	HTMLContent template.HTML
 }
 
 var projects = []Project{
-	{Title: "Template", Slug: "template"},
-	{Title: "HK-Aerial", Slug: "hkaerial"},
-	{Title: "Portfoli-Go", Slug: "portfolio"},
-	{Title: "Homelab", Slug: "homelab"},
-	{Title: "Satisfaction75 Build", Slug: "satisfaction75"},
-	{Title: "DAS - Direct-Attached Storage", Slug: "das"},
-	{Title: "Home Surveillance", Slug: "home-cam"},
+	//{Title: "Template", Slug: "template", Description: ""},
+	{Title: "HK-Aerial", Slug: "hkaerial", Description: "Senior design drone project"},
+	{Title: "Portfoli-Go", Slug: "portfolio", Description: "Self-hosted portfolio using Go"},
+	{Title: "Homelab", Slug: "homelab", Description: "Homelab for personal development"},
+	{Title: "Satisfaction75 Build", Slug: "satisfaction75", Description: "Build log for custom keyboard"},
+	{Title: "DAS - Direct-Attached Storage", Slug: "das", Description: "Expansion of homelab storage"},
+	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP"},
 }
 
 func main() {
@@ -35,7 +37,7 @@ func main() {
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
-	err := tmpl.Execute(w, nil)
+	err := tmpl.Execute(w, projects)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
@@ -44,6 +46,19 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 func projectHandler(w http.ResponseWriter, r *http.Request) {
 	slug := r.URL.Path[len("/projects/"):]
 
+	var selected *Project
+	for _, p := range projects {
+		if p.Slug == slug {
+			selected = &p
+			break
+		}
+	}
+
+	if selected == nil {
+		http.NotFound(w, r)
+		return
+	}
+
 	mdPath := filepath.Join("content", slug+".md")
 	mdBytes, err := ioutil.ReadFile(mdPath)
 	if err != nil {
@@ -51,16 +66,11 @@ func projectHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	htmlContent := blackfriday.Run(mdBytes)
+	rendered := blackfriday.Run(mdBytes)
+	selected.HTMLContent = template.HTML(rendered)
 
-	tmpl := template.Must(template.ParseFiles("templates/project-deprecated.html"))
-	tmpl.Execute(w, struct {
-		Title   string
-		Content template.HTML
-	}{
-		Title:   slug,
-		Content: template.HTML(htmlContent),
-	})
+	tmpl := template.Must(template.ParseFiles("templates/project.html"))
+	tmpl.Execute(w, selected)
 }
 
 // Implementation using structs. Deprecated

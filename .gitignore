@@ -18,4 +18,4 @@ Thumbs.db
 static/images/*
 
 # Remove deprecated files
-projects/*
+projects/*deprecated
