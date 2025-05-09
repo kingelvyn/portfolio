@@ -2,15 +2,14 @@ package main
 
 import (
 	"html/template"
-	"log"
 	"net/http"
 )
 
 type Project struct {
-	Title string
-	Description	string
-	Slug string	
-	Image string
+	Title       string
+	Description string
+	Slug        string
+	Image       string
 }
 
 var projects = []Project{
@@ -23,8 +22,8 @@ func main() {
 	http.Handle("/static", http.StripPrefix("/static", http.FileServer(http.Dir("/static"))))
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/projects/", projectHandler)
-	
-	Println("Server started at port :3000...")
+
+	println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
 }
 
@@ -56,7 +55,7 @@ func projectHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // Old main, non-dynamic style
-"""
+/*
 func handler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
 	err := tmpl.Execute(w, nil)
@@ -79,4 +78,4 @@ func main() {
 		log.Fatal(err)
 	}
 }
-"""
+*/
