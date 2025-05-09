@@ -34,6 +34,7 @@ h1, h2 {
 
 .video-container {
     position: relative;
+    justify-content: center;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
@@ -42,6 +43,7 @@ h1, h2 {
 
 .video-container iframe {
     position: absolute;
+    text-align: center;
     top: 0;
     left: 0;
     width: 100%;
