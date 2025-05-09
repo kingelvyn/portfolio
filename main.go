@@ -19,7 +19,8 @@ var projects = []Project{
 }
 
 func main() {
-	http.Handle("/static", http.StripPrefix("/static", http.FileServer(http.Dir("/static"))))
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/projects/", projectHandler)
 

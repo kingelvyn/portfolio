@@ -1,10 +1,11 @@
+/* Default (light mode) */
 body {
     font-family: Arial, sans-serif;
     max-width: 800px;
-    background-color: #c8c8c8;
+    background-color: #fff;
     margin: 2rem auto;
     padding: 1rem;
-    background: #c7c7c7;
+    background: #f7f7f7;
 }
 
 header {
@@ -29,4 +30,52 @@ footer {
     text-align: center;
     color: #777;
     font-size: 0.9rem;
+}
+
+/* Dark mode (system pref) */
+@media (prefers-color-scheme: dark) {
+    body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        background-color: #121212;
+        margin: 2rem auto;
+        padding: 1rem;
+        color: #e8e8e8;
+    }
+
+    header {
+        text-align: center;
+        background-color: #1d1d1d;
+        color: #e8e8e8;
+        margin-bottom: 2rem;
+    }
+
+    header nav a {
+        color: #1a73e8;
+        text-decoration: none
+    }
+
+    header nav a:hover {
+        color: #6200ee;
+    }
+
+    footer {
+        background-color: #202020;
+    }
+
+    footer p {
+        color: #b0b0b0;
+    }
+
+    h1, h2 {
+        color: #e8e8e8;
+    }
+
+    a {
+        color: #1a73e8;
+    }
+
+    a:hover {
+        color: #6200ee;
+    }
 }
