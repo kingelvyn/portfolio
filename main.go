@@ -1,11 +1,70 @@
 package main
 
 import (
+	"github.com/russross/blackfriday/v2"
 	"html/template"
+	"io/ioutil"
 	"net/http"
+	"path/filepath"
 )
 
 type Project struct {
+	Title string
+	Slug  string
+}
+
+var projects = []Project{
+	{Title: "Template", Slug: "template"},
+	{Title: "HK-Aerial", Slug: "hkaerial"},
+	{Title: "Portfoli-Go", Slug: "portfolio"},
+	{Title: "Homelab", Slug: "homelab"},
+	{Title: "Satisfaction75 Build", Slug: "satisfaction75"},
+	{Title: "DAS - Direct-Attached Storage", Slug: "das"},
+	{Title: "Home Surveillance", Slug: "home-cam"},
+}
+
+func main() {
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/projects/", projectHandler)
+
+	println("Server started at port :3000...")
+	http.ListenAndServe(":3000", nil)
+}
+
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("templates/index.html"))
+	err := tmpl.Execute(w, nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+func projectHandler(w http.ResponseWriter, r *http.Request) {
+	slug := r.URL.Path[len("/projects/"):]
+
+	mdPath := filepath.Join("content", slug+".md")
+	mdBytes, err := ioutil.ReadFile(mdPath)
+	if err != nil {
+		http.NotFound(w, r)
+		return
+	}
+
+	htmlContent := blackfriday.Run(mdBytes)
+
+	tmpl := template.Must(template.ParseFiles("templates/project-deprecated.html"))
+	tmpl.Execute(w, struct {
+		Title   string
+		Content template.HTML
+	}{
+		Title:   slug,
+		Content: template.HTML(htmlContent),
+	})
+}
+
+// Implementation using structs. Deprecated
+/*type Project struct {
 	Title        string
 	Description  string
 	Slug         string
@@ -114,11 +173,11 @@ func projectHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	tmpl := template.Must(template.ParseFiles("templates/project.html"))
+	tmpl := template.Must(template.ParseFiles("templates/project-deprecated.html"))
 	tmpl.Execute(w, selected)
-}
+}*/
 
-// Old main, non-dynamic style
+// Original implementation, non-dynamic. Deprecated
 /*
 func handler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
