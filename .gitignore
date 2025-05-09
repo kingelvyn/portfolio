@@ -18,4 +18,5 @@ Thumbs.db
 static/images/*
 
 # Remove deprecated files
-projects/*deprecated
+templates/projects/*
+!templates/projects/.gitkeep
