@@ -24,7 +24,7 @@ FROM alpine:latest
 WORKDIR /app
 
 # Install adduser for final image
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache shadow
 
 # Adding user
 RUN adduser -D -h /home/elvyn elvyn
