@@ -12,10 +12,4 @@ services:
       - ./content:/app/content
     ports:
       - "3000:3000"
-    networks:
-      - portfolio-network
     restart: unless-stopped
-
-networks:
-  portfolio-network:
-    driver: bridge
