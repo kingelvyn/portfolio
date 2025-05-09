@@ -10,15 +10,29 @@ type Project struct {
 	Description  string
 	Slug         string
 	Image        string
+	Video        string
 	Content      string
 	Technologies []string
 }
 
 var projects = []Project{
 	{
-		Title:       "HK Aerial",
-		Slug:        "hk-aerial",
-		Description: "Lead a team to design and manufacture an all-terrain payload delivery drone.",
+		Title:        "Template",
+		Slug:         "Template",
+		Description:  "Template",
+		Content:      "",
+		Technologies: []string{},
+		Image:        "",
+		Video:        "",
+	},
+	{
+		Title:        "HK Aerial",
+		Slug:         "hk-aerial",
+		Description:  "Lead a team to design and manufacture an all-terrain payload delivery drone.",
+		Content:      "WIP",
+		Technologies: []string{},
+		Image:        "WIP",
+		Video:        "WIP",
 	},
 	{
 		Title:       "Portfoli-Go",

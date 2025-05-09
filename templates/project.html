@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Elvyn's Portfolio - WIP</title>
+    <title>{{ .Title }} - Elvyn's Portfolio</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -13,10 +13,33 @@
     </header>
 
     <main>
-        <h1>Project Name</h1>
-        <p>Overview:</p>
-        <p>My role: </p>
-        <img src="/static/images/.jpg" alt="alt name" width="300">
+        <section>
+            <h1>{{ .Title }}</h1>
+
+            {{ if .Image }}
+                <img src="{{ .Image }}" alt=" {{ .Title }} image" class="project-image">
+            {{ end }}
+
+            <p><strong>Summary:</strong> {{ .Description }} </p>
+            <p> {{ .Content }} </p>
+
+            {{ if .Technologies }}
+                <h3>Technologies Used:</h3>
+                <ul>
+                    {{ range .Technologies }}
+                        <li> {{ . }} </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+
+            {{ if .Video }}
+            <div class="video-container">
+                <iframe width="500" height="315" src="{{ .Video }}"
+                        frameborder="0" allowfullscreen></iframe>
+            </div>
+            {{ end }}
+
+        </section>
     </main>
 
     <footer>
