@@ -14,8 +14,8 @@
 .DS_Store
 Thumbs.db
 
-# Images, comment to avoid uploading images
-static/images/*
+# Images, comment to upload images
+#static/images/*
 
 # Remove deprecated files
 templates/projects/*
