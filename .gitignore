@@ -21,3 +21,5 @@ static/images/*
 templates/projects/*
 templates/project-deprecated.html
 !templates/projects/.gitkeep
+original-main-deprecated.go
+struct-main-deprecated.go
