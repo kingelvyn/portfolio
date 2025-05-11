@@ -19,5 +19,16 @@ ___
 - Manages files with Git for version control
 - Utilizes alpine images for minimal resources
 
+### Skills used / Developed
+
+- Dynamic programming in Go for deploying multiple pages
+- Webserver management
+- Reverse proxy to open website to public
+- HTTP / CSS / Markdown
+- Creating low resource intensive images
+- Improved scalability by externalizing content into markdown filesg
+
+___
+
 ### Links:
 [Portfolio Github Repo](https://github.com/kingelvyn/portfolio)
