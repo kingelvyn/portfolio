@@ -24,6 +24,18 @@ ___
 - Emergency failsafe protocols
 - 4.83kg weight (~10.6 lbs)
 
+### Skills used / Developed
+
+- Raspberry Pi automation scripts
+- Python programs for live inferencing
+- Proper power delivery to auxiliary components
+- Machine learning for object detection model training
+- Structured analysis and testing for subsystems
+- Project documentation
+
+
+---
+
 ### [Video(s)](https://lsumail2-my.sharepoint.com/:f:/g/personal/ecacha1_lsu_edu/Eg9fbSZKnYtBkltUtrdNZuYBayHBqVfP1zNsWUQfvVmdEQ?e=bEeCs3)
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
