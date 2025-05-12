@@ -26,7 +26,7 @@ ___
 - Reverse proxy to open website to public
 - HTTP / CSS / Markdown
 - Creating low resource intensive images
-- Improved scalability by externalizing content into markdown filesg
+- Improved scalability by externalizing content into markdown files
 
 ___
 
