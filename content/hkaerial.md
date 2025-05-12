@@ -39,7 +39,11 @@ ___
 ### [Video(s)](https://lsumail2-my.sharepoint.com/:f:/g/personal/ecacha1_lsu_edu/Eg9fbSZKnYtBkltUtrdNZuYBayHBqVfP1zNsWUQfvVmdEQ?e=bEeCs3)
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
-  <iframe width="560" height="315" src="https://youtube.com/shorts/FkumSg_DgNA?si=g_-mWyUPz7j3L4pR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://youtube.com/embed/y0813I8tDnA?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:1em;">
+  <iframe width="560" height="315" src="https://youtube.com/embed/FkumSg_DgNA?si=g_-mWyUPz7j3L4pR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
