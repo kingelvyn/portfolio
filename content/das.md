@@ -3,20 +3,24 @@
 ---
 
 ### Summary
-> Expanding my homelab's storage capabilities
+> Expanding my [homelab's](https://portfolio.elvynprise.xyz/projects/homelab) storage capabilities
 
 <div style="text-align:center;">
-  <img src="/static/images/.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="/static/images/homelab.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
 </div>
 
 ___
 
 ### Features:
 
-- Feature list
+- ZFS pool configured for RAIDZ1 for case of single hard drive failure
+- JBOD attached to Proxmox host to allow for network sharing of storage
+- Externally powered separate from Proxmox host server
 
-### [Video(s):](https://lsumail2-my.sharepoint.com/:f:/g/personal/ecacha1_lsu_edu/Eg9fbSZKnYtBkltUtrdNZuYBayHBqVfP1zNsWUQfvVmdEQ?e=bEeCs3)
+### Skills Used / Developed
 
-<div style="display:flex; justify-content:center; margin-top:1em;">
-
-</div>
+- Hardware integration (attached drives externally using a SAS HBA IT card)
+- 3D printed custom enclosure
+- Managed power delivery and cabling for reliability and performance
+- Mounted and formatted drives for a RAIDZ ZFS pool with a single parity drive
+- Pass storage into Proxmox for samba sharing over network

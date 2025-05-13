@@ -20,10 +20,10 @@ var projects = []Project{
 	{Title: "HK-Aerial", Slug: "hkaerial", Description: "Senior design drone project"},
 	{Title: "Portfoli-Go", Slug: "portfolio", Description: "Self-hosted portfolio using Go"},
 	{Title: "Homelab", Slug: "homelab", Description: "Homelab for personal development"},
+	{Title: "GBA SP Reshell + USB-C Mod", Slug: "gameboy", Description: "Restored an old GBA SP with a new shell and USB-C mod"},
 	{Title: "Satisfaction75 Build", Slug: "satisfaction75", Description: "Build log for custom keyboard"},
 	{Title: "DAS - Direct-Attached Storage", Slug: "das", Description: "Expansion of homelab storage"},
 	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP"},
-	{Title: "GBA SP Reshell + USB-C Mod", Slug: "gameboy", Description: "Restored an old GBA SP with a new shell and USB-C mod"},
 }
 
 func main() {

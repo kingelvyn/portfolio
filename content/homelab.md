@@ -20,3 +20,9 @@ ___
 - Nginx as tool to manage proxy hosts and reverse proxies
 - Pi-hole for DNS management
 - Samba share for network storage capabilities
+
+### Skills Used / Developed
+
+- Network & system administration (pi-hole, samba file shares, wireguard VPN, firewall configuration, reverse proxy, SSL integration, and domain routing)
+- Building & managing containers (virtualization, isolation, and resource management)
+- Web development (custom portfolio website, [Portfoli-go](https://portfolio.elvynprise.xyz/projects/portfolio), HTML & CSS, and markdown rendering)
