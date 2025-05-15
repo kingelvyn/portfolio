@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   portfolio:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
       args:
-        CACHE_BUSTER: 1
+        CACHE_BUSTER: 2
     container_name: portfolio
     ports:
       - "3000:3000"
