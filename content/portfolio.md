@@ -31,4 +31,4 @@ ___
 ___
 
 ### Links:
-[Portfolio Github Repo](https://github.com/kingelvyn/portfolio)
+- [Portfolio Github Repo](https://github.com/kingelvyn/portfolio)

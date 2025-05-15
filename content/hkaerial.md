@@ -3,7 +3,8 @@
 ---
 
 ### Summary
-> Lead a multi-disciplinary team to design, develop, and manufacture an all-terrain payload delivery drone with object detection for Senior Design at LSU.
+> Lead a multi-disciplinary team to design, develop, and manufacture an all-terrain payload delivery drone with object detection for Senior Design at LSU for
+> a competition. Team HK Aerial was declared the winner of the competition.
 
 <div style="text-align:center;">
   <img src="/static/images/hkaerial.jpg" alt="HK Aerial" style="max-width:50%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
