@@ -54,5 +54,5 @@ ___
 - Persistent volumes for data storage
 
 ### Links:
-[SEO Optimizer Repo]()
+[SEO Optimizer Repo](https://github.com/kingelvyn/seo-optimizer)
 [SEO Optimizer Link](https://seo-optimizer.elvynprise.xyz/)
