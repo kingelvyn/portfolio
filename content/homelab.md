@@ -21,7 +21,7 @@ ___
 - Pi-hole for DNS management
 - Samba share for network storage capabilities
 
-### Skills Used / Developed
+### Skills Used / Developed:
 
 - Network & system administration (pi-hole, samba file shares, wireguard VPN, firewall configuration, reverse proxy, SSL integration, and domain routing)
 - Building & managing containers (virtualization, isolation, and resource management)

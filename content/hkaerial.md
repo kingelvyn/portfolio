@@ -12,7 +12,7 @@
 
 ___
 
-### Features
+### Features:
 
 - On-board object detection and video recording
 - Flight data logging
@@ -25,7 +25,7 @@ ___
 - Emergency failsafe protocols
 - 4.83kg weight (~10.6 lbs)
 
-### Skills Used / Developed
+### Skills Used / Developed:
 
 - Raspberry Pi automation scripts
 - Python programs for live inferencing

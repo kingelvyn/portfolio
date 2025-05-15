@@ -17,7 +17,7 @@ ___
 - JBOD attached to Proxmox host to allow for network sharing of storage
 - Externally powered separate from Proxmox host server
 
-### Skills Used / Developed
+### Skills Used / Developed:
 
 - Hardware integration (attached drives externally using a SAS HBA IT card)
 - 3D printed custom enclosure

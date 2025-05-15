@@ -33,7 +33,7 @@ ___
 - Environment-aware configuration
 - Persistent statistics storage
 
-### Skills Used / Developed
+### Skills Used / Developed:
 #### Backend
 - Go 1.21
 - Gin web framework

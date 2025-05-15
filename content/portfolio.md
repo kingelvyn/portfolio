@@ -19,7 +19,7 @@ ___
 - Manages files with Git for version control
 - Utilizes alpine images for minimal resources
 
-### Skills used / Developed
+### Skills used / Developed:
 
 - Dynamic programming in Go for deploying multiple pages
 - Webserver management
