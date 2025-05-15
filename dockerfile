@@ -1,6 +1,8 @@
 # Use the official Go image to build
 FROM golang:1.21-alpine as builder
 
+ARG CACHE_BUSTER=1
+
 WORKDIR /app
 
 # Install packages for build stage
