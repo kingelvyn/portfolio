@@ -53,6 +53,8 @@ ___
 - Traefik (optional)
 - Persistent volumes for data storage
 
+---
+
 ### Links:
 - [Github Repo](https://github.com/kingelvyn/seo-optimizer)
 - [SEO Optimizer Link](https://seo-optimizer.elvynprise.xyz/)
