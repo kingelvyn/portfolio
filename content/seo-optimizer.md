@@ -39,11 +39,13 @@ ___
 - Gin web framework
 - goquery for HTML parsing
 - Custom statistics tracking
+
 #### Frontend
 - React 18
 - TypeScript
 - Modern CSS
 - Real-time statistics updates
+
 #### Infrastructure
 - Docker
 - Docker Compose
