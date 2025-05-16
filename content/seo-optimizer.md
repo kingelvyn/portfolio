@@ -3,10 +3,10 @@
 ---
 
 ### Summary
-> An SEO Optimizer to analyze SEO results from websites
+> A modern web application for analyzing and optimizing website SEO performance. Built with Go (backend) and React/TypeScript (frontend).
 
 <div style="text-align:center;">
-  <img src="/static/images/seo-optimizer.png" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="/static/images/seo-optimizer.png" alt="website screenshot" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
 </div>
 
 ___
@@ -24,14 +24,21 @@ ___
 - Visual score indicators
 - Detailed recommendations for improvement
 - Modern, responsive UI
-- Statistics Dashboard:
+- Enhanced Statistics Dashboard:
+  - Monthly statistics tracking with persistence
+  - Automatic data retention management
   - Unique visitors tracking
   - Analysis request monitoring
   - Error rate tracking
   - Average load time metrics
-  - Most analyzed URLs (development mode)
+  - Private URL tracking (tracked but only visible in development)
+  - Cache performance metrics
+  - Graceful shutdown with data preservation
+  - Production-ready metrics display
+  - Development-only detailed URL analysis
 - Environment-aware configuration
-- Persistent statistics storage
+- Persistent statistics storage with automatic cleanup
+- SEO Optimization Features (WIP):
 
 ### Skills Used / Developed:
 #### Backend
@@ -39,19 +46,25 @@ ___
 - Gin web framework
 - goquery for HTML parsing
 - Custom statistics tracking
+- Automatic monthly data rotation
 
 #### Frontend
 - React 18
 - TypeScript
 - Modern CSS
 - Real-time statistics updates
+- Mobile responsive design
 
 #### Infrastructure
 - Docker
 - Docker Compose
 - Nginx
-- Traefik (optional)
+- Traefik for:
+  - SSL termination
+  - URL rewriting
+  - Secure file serving
 - Persistent volumes for data storage
+- Private asset management
 
 ---
 
