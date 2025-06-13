@@ -25,6 +25,7 @@ var projects = []Project{
 	{Title: "DAS - Direct-Attached Storage", Slug: "das", Description: "Expansion of homelab storage"},
 	{Title: "SEO Optimizer", Slug: "seo-optimizer", Description: "Created an SEO Optimizer for websites"},
 	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP"},
+	{Title: "Hand Tracked Mouse", Slug: "camera-mouse", Description: "WIP"},
 }
 
 func main() {
