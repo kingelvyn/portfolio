@@ -3,7 +3,7 @@
 ---
 
 ### Summary
-> A modern web application for analyzing and optimizing website SEO performance. Built with Go (backend) and React/TypeScript (frontend).
+> A modern web application for analyzing and optimizing website SEO performance. Built with Go (backend) and TypeScript/React (frontend).
 
 <div style="text-align:center;">
   <img src="/static/images/seo-optimizer.png" alt="website screenshot" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
@@ -49,8 +49,7 @@ ___
 - Automatic monthly data rotation
 
 #### Frontend
-- React 18
-- TypeScript
+- TypeScript / React 18
 - Modern CSS
 - Real-time statistics updates
 - Mobile responsive design
