@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/russross/blackfriday/v2"
 	"html/template"
 	"io/ioutil"
 	"net/http"
 	"path/filepath"
+
+	"github.com/russross/blackfriday/v2"
 )
 
 type Project struct {
@@ -34,7 +35,7 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.HandleFunc("/", indexHandler)
-	// http.HandleFunc("/projects/", projectHandler) // No longer needed
+	http.HandleFunc("/projects/", projectHandler)
 
 	println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
