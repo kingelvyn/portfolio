@@ -15,6 +15,7 @@ type Project struct {
 	HTMLContent template.HTML
 }
 
+// Projects Section
 var projects = []Project{
 	//{Title: "Template", Slug: "template", Description: ""},
 	{Title: "HK-Aerial", Slug: "hkaerial", Description: "Senior design drone project"},
@@ -28,16 +29,18 @@ var projects = []Project{
 	{Title: "Hand Tracked Mouse", Slug: "camera-mouse", Description: "WIP"},
 }
 
+// Main function serving
 func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/projects/", projectHandler)
+	// http.HandleFunc("/projects/", projectHandler) // No longer needed
 
 	println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
 }
 
+// Serves index page (main page)
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
 	err := tmpl.Execute(w, projects)
@@ -46,6 +49,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+// Handles projects listings
 func projectHandler(w http.ResponseWriter, r *http.Request) {
 	slug := r.URL.Path[len("/projects/"):]
 
