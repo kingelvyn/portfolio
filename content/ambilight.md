@@ -3,7 +3,7 @@
 ---
 
 ### Summary
-> DIY system that replicates an ambilight LED experience similar to that of (Philips Ambilight TV)[https://www.philips.com.my/c-m-so/tv/p/ambilight]
+> DIY system that replicates an ambilight LED experience similar to that of [Philips Ambilight TV](https://www.philips.com.my/c-m-so/tv/p/ambilight)
 
 <div style="text-align:center;">
   <img src="/static/images/.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
