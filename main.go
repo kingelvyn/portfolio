@@ -26,6 +26,7 @@ var projects = []Project{
 	{Title: "Satisfaction75 Build", Slug: "satisfaction75", Description: "Build log for custom keyboard"},
 	{Title: "DAS - Direct-Attached Storage", Slug: "das", Description: "Expansion of homelab storage"},
 	{Title: "SEO Optimizer", Slug: "seo-optimizer", Description: "Created an SEO Optimizer for websites"},
+	{Title: "DIY TV Ambilight", Slug: "ambilight", Description: "Replicated an ambilight system using open-sourced software and off-the-shelf products"},
 	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP"},
 	{Title: "Hand Tracked Mouse", Slug: "camera-mouse", Description: "WIP"},
 }
