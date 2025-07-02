@@ -13,9 +13,10 @@ ___
 
 ### Features:
 
-- Feature list
+- Addressable LED's that will sync with TV input 
+-  
 
-### [Video(s):](https://lsumail2-my.sharepoint.com/:f:/g/personal/ecacha1_lsu_edu/Eg9fbSZKnYtBkltUtrdNZuYBayHBqVfP1zNsWUQfvVmdEQ?e=bEeCs3)
+### [Video(s):]()
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
   
