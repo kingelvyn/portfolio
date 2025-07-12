@@ -3,7 +3,7 @@
 ---
 
 ### Summary
-> DIY system that replicates an ambilight LED experience similar to that of [Philips Ambilight TV](https://www.philips.com.my/c-m-so/tv/p/ambilight). The method that I used only works with a PC as it records screen input from a PC and directs to software called SignalRGB via WLED.
+> DIY system that replicates an ambilight LED experience similar to that of [Philips Ambilight TV](https://www.philips.com.my/c-m-so/tv/p/ambilight). The method that I used only works with a PC as it records screen input from a PC and directs to software called SignalRGB via WLED. I soldered the 5V PSU directly to the LED strip and used the data and ground cable to from ESP-32 to the light strip as well.
 
 <div style="text-align:center;">
   <img src="/static/images/ambilight.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
@@ -19,7 +19,7 @@ ___
 - Home assistant compatibility
 - 5V WS2812B LED Strip (60/m)
 
-### [Video(s)]
+### Video(s)
 
 <div style="display:flex; justify-content:center; margin-top:1em; flex-wrap: wrap;">
   <iframe width="540" height="315" src="https://www.youtube.com/embed/eqXo_-M6IYA?si=dlvwwU4TJWgoXkaJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
