@@ -6,7 +6,7 @@
 > DIY system that replicates an ambilight LED experience similar to that of [Philips Ambilight TV](https://www.philips.com.my/c-m-so/tv/p/ambilight). The method that I used only works with a PC as it records screen input from a PC and directs to software called SignalRGB via WLED.
 
 <div style="text-align:center;">
-  <img src="/static/images/.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="/static/images/ambilight.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
 </div>
 
 ___
