@@ -19,7 +19,7 @@ ___
 - Home assistant compatibility
 - 5V WS2812B LED Strip (60/m)
 
-### [Video(s):]()
+### [Video(s)]
 
 <div style="display:flex; justify-content:center; margin-top:1em; flex-wrap: wrap;">
   <iframe width="360" height="215" src="https://youtube.com/shorts/ZHGjayYmdN4?feature=share" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
