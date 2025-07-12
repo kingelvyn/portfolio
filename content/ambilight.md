@@ -25,6 +25,6 @@ ___
   <iframe width="560" height="315" src="https://www.youtube.com/embed/eqXo_-M6IYA?si=dlvwwU4TJWgoXkaJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-<div style="display:flex; justify-content:center; margin-top:1em;">
+<div style="display:flex; justify-content:center; margin-top:1em; flex-wrap: wrap;">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/x3gXeRki_34?si=W8aCFFL6e41GknGt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
