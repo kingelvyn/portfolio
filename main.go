@@ -29,6 +29,7 @@ var projects = []Project{
 	{Title: "DIY TV Ambilight", Slug: "ambilight", Description: "Replicated an ambilight system using open-sourced software and off-the-shelf products"},
 	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP"},
 	{Title: "Hand Tracked Mouse", Slug: "camera-mouse", Description: "WIP"},
+	{Title: "Riftbound TCG Assistant", Slug: "riftbound-assistant", Description: "Assistant for Riftbound TCG assists in decision making and learning about ML"},
 }
 
 // Main function serving
