@@ -3,7 +3,7 @@
 ---
 
 ### Summary
-> Riftbound assistant that maintains a database, read / receive data from game board, return advice / suggestions
+> [Riftbound assistant](https://github.com/kingelvyn/rift-assistant) that maintains a database, read / receive data from game board, return advice / suggestions
 
 <div style="text-align:center;">
   <img src="/static/images/.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
@@ -23,3 +23,10 @@ ___
 <div style="display:flex; justify-content:center; margin-top:1em;">
   
 </div>
+
+___
+
+
+### Links:
+- [Github Repo](https://github.com/kingelvyn/seo-optimizer)
+- [SEO Optimizer Link](https://seo-optimizer.elvynprise.xyz/)
