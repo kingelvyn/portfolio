@@ -6,19 +6,24 @@
 > [Riftbound assistant](https://github.com/kingelvyn/rift-assistant) that maintains a database, read / receive data from game board, return advice / suggestions
 
 <div style="text-align:center;">
-  <img src="/static/images/.jpg" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/6cf5ae382207a6569b542e215d49d0e4266fc617-1200x630.png?accountingTag=RB" alt="alt text" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
 </div>
 
 ___
 
 ### Features:
 
-- Read or receive a GameState
-- Returns advice / suggestions
-- Has a local card catalog database (complete)
-- Aims to eventually support screen parsing for simulators (TCG Arena, Tabletop Simulator)
+- Game State Analysis: Reads and processes game state information
+- Strategic Advice: Provides suggestions and recommendations based on current game state
+- Battlefield-Aware Recommendations: Analyzes battlefield states and recommends optimal unit placement
+- Legend Ability Integration: Considers both your and opponent's legend abilities in recommendations
+- Local Card Database: Complete card catalog stored in SQLite database
+- RESTful API: FastAPI-based API for accessing game state and advice
+- ML Training Data Logging: Structured logging for future machine learning integration
+- Future Support: Plans to support screen parsing for simulators (TCG Arena, Tabletop Simulator)
 
-### [Video(s):](https://lsumail2-my.sharepoint.com/:f:/g/personal/ecacha1_lsu_edu/Eg9fbSZKnYtBkltUtrdNZuYBayHBqVfP1zNsWUQfvVmdEQ?e=bEeCs3)
+
+### [Video(s):]()
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
   
@@ -28,5 +33,4 @@ ___
 
 
 ### Links:
-- [Github Repo](https://github.com/kingelvyn/seo-optimizer)
-- [SEO Optimizer Link](https://seo-optimizer.elvynprise.xyz/)
+- [Github Repo](https://github.com/kingelvyn/rift-assistant)
