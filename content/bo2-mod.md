@@ -27,7 +27,7 @@ ___
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
 
+</div>
+
 ### Links:
 - [Github Repo](https://github.com/kingelvyn/bo2-zm-streamer-interactive)
-
-</div>
