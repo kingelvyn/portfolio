@@ -30,6 +30,7 @@ var projects = []Project{
 	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP"},
 	{Title: "Hand Tracked Mouse", Slug: "camera-mouse", Description: "WIP"},
 	{Title: "Riftbound TCG Assistant", Slug: "riftbound-assistant", Description: "Assistant for Riftbound TCG assists in decision making and learning about ML"},
+	{Title: "BO2 Interactive Zombies Mod", Slug: "bo2-mod", Description: "BO2 Zombies Mod allowing for interactive participation from streamer chat"},
 }
 
 // Main function serving
