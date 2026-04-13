@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
+	"os"
 
 	"github.com/russross/blackfriday/v2"
 )
