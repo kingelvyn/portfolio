@@ -80,12 +80,12 @@ window.addEventListener("load", async () => {
 
   if (bootLines[2]) {
     await typeLine(bootLines[2], bootLines[2].dataset.text || "", 32);
-    await sleep(80);
+    await sleep(90);
   }
 
   if (bootLines[3]) {
     await typeLine(bootLines[3], bootLines[3].dataset.text || "", 32, true);
-    await sleep(120);
+    await sleep(100);
   }
 
   // Animate top links

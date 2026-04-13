@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects // Elvyn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/static/css/style-cyberpunk.css" />
+  <link rel="stylesheet" href="/static/css/projects.css" />
+</head>
+<body class="projects-page-body">
+  <div class="background-grid"></div>
+  <div class="background-glow"></div>
+  <div class="scanlines"></div>
+  <div class="background-vignette"></div>
+  <div class="hud-rings"></div>
+  <div class="diag-lines"></div>
+
+  <div class="top-links">
+    <a href="/">HOME</a>
+    <a href="/static/resume-new.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+    <a href="https://github.com/kingelvyn" target="_blank" rel="noopener noreferrer">GITHUB</a>
+    <a href="https://www.linkedin.com/in/the-elvyn/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+    <a href="mailto:ecacha1@lsu.edu">EMAIL</a>
+  </div>
+
+  <main class="projects-page">
+    <div class="boot-sequence">
+      <p class="boot-line" data-text="Accessing project archive..."></p>
+      <p class="boot-line" data-text="Loading build logs..."></p>
+      <p class="boot-line" data-text="Dossier index available"></p>
+    </div>
+
+    <section class="projects-panel">
+      <div class="panel-tag">PROJECT ARCHIVE</div>
+
+      <div class="projects-header">
+        <div class="projects-status">
+          <span>STATUS: <span class="status-active">ACTIVE</span></span>
+          <span>MODULES: {{len .}}</span>
+        </div>
+
+        <h1>PROJECT DOSSIERS</h1>
+        <p>
+          Browse build logs, experiments, engineering work, and personal development projects.
+          Select a dossier to open the full project record.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        {{range .}}
+        <a class="project-card" href="/projects/{{.Slug}}">
+          <div class="project-card-top">
+            <div class="project-card-label">DOSSIER ENTRY</div>
+            <h2>{{.Title}}</h2>
+            <p>{{.Description}}</p>
+          </div>
+
+          <div class="project-card-bottom">OPEN RECORD</div>
+        </a>
+        {{end}}
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Elvynprise</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script id="mvlak7">
+    function sleep(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    async function typeLine(element, text, speed = 32, keepCursor = false) {
+      element.textContent = "";
+      element.classList.add("typing");
+
+      for (let i = 0; i < text.length; i++) {
+        element.textContent += text[i];
+        await sleep(speed);
+      }
+
+      await sleep(180);
+
+      if (!keepCursor) {
+        element.classList.remove("typing");
+      }
+    }
+
+    window.addEventListener("load", async () => {
+      const bootLines = document.querySelectorAll(".boot-line");
+      const topLinks = document.querySelectorAll(".top-links a");
+      const projectPanel = document.querySelector(".projects-panel");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      gsap.set(topLinks, { opacity: 0, y: -10 });
+      gsap.set(projectCards, { opacity: 0, y: 14 });
+
+      bootLines.forEach((line) => {
+        line.textContent = "";
+      });
+
+      if (bootLines[0]) {
+        await typeLine(bootLines[0], bootLines[0].dataset.text || "", 32);
+        await sleep(80);
+      }
+
+      if (bootLines[1]) {
+        await typeLine(bootLines[1], bootLines[1].dataset.text || "", 32);
+        await sleep(80);
+      }
+
+      if (projectPanel) {
+        gsap.fromTo(
+          projectPanel,
+          { opacity: 0, y: 24, scale: 0.985 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            ease: "power3.out"
+          }
+        );
+      }
+
+      if (bootLines[2]) {
+        await typeLine(bootLines[2], bootLines[2].dataset.text || "", 32, true);
+        await sleep(100);
+      }
+
+      gsap.to(topLinks, {
+        opacity: 1,
+        y: 0,
+        duration: 0.35,
+        stagger: 0.06,
+        ease: "power2.out"
+      });
+
+      gsap.to(projectCards, {
+        opacity: 1,
+        y: 0,
+        duration: 0.35,
+        stagger: 0.05,
+        ease: "power2.out",
+        delay: 0.1
+      });
+    });
+  </script>
+</body>
+</html>

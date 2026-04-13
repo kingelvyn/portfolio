@@ -7,6 +7,7 @@
 
 <div style="text-align:center;">
   <img src="/static/images/portfolio.png" alt="Screenshot Portfolio" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="/static/images/portfolio-new.png" alt="Screenshot Portfolio" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
 </div>
 
 ___
@@ -17,14 +18,14 @@ ___
 - Containerized with Docker for consistent deployment and management
 - Configured reverse proxy with Nginx and Cloudflare for domain resolution, HTTPS, and DNS management
 - Manages files with Git for version control
-- Utilizes alpine images for minimal resources
+- Implements JavaScript and CSS styling
 
 ### Skills used / Developed:
 
 - Dynamic programming in Go for deploying multiple pages
 - Webserver management
 - Reverse proxy to open website to public
-- HTTP / CSS / Markdown
+- HTTP / CSS / Markdown / JavaScript
 - Creating low resource intensive images
 - Improved scalability by externalizing content into markdown files
 
