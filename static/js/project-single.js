@@ -92,33 +92,33 @@ window.addEventListener("DOMContentLoaded", async () => {
   }, ">-0.15");
 }
 
-if (markdownNodes.length) {
-  tl.to(markdownNodes, {
-    autoAlpha: 1,
-    y: 0,
-    duration: 0.28,
-    stagger: 0.03,
-    ease: "power2.out"
-  }, "<0.08");
-}
+  if (markdownNodes.length) {
+    tl.to(markdownNodes, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.28,
+      stagger: 0.03,
+      ease: "power2.out"
+    }, "<0.08");
+  }
 
-if (panelTag) {
-  tl.to(panelTag, {
-    autoAlpha: 1,
-    x: 0,
-    duration: 0.25,
-    ease: "power2.out"
-  }, ">-0.08");
-}
+  if (panelTag) {
+    tl.to(panelTag, {
+      autoAlpha: 1,
+      x: 0,
+      duration: 0.25,
+      ease: "power2.out"
+    }, ">-0.08");
+  }
 
-if (statusBadge) {
-  tl.to(statusBadge, {
-    autoAlpha: 1,
-    scale: 1,
-    duration: 0.2,
-    ease: "back.out(1.6)"
-  }, "<0.04");
-}
+  if (statusBadge) {
+    tl.to(statusBadge, {
+      autoAlpha: 1,
+      scale: 1,
+      duration: 0.2,
+      ease: "back.out(1.6)"
+    }, "<0.04");
+  }
 
   if (archiveButton) {
     archiveButton.addEventListener("mouseenter", () => {
