@@ -24,56 +24,66 @@ window.addEventListener("load", async () => {
   const projectPanel = document.querySelector(".projects-panel");
   const projectCards = document.querySelectorAll(".project-card");
 
-  gsap.set(topLinks, { opacity: 0, y: -10 });
-  gsap.set(projectCards, { opacity: 0, y: 14 });
-
   bootLines.forEach((line) => {
     line.textContent = "";
   });
 
+  if (topLinks.length) {
+    gsap.set(topLinks, { opacity: 0, y: -10 });
+  }
+
+  if (projectPanel) {
+    gsap.set(projectPanel, { opacity: 0, y: 24, scale: 0.985 });
+  }
+
+  if (projectCards.length) {
+    gsap.set(projectCards, { opacity: 0, y: 14 });
+  }
+
   if (bootLines[0]) {
     await typeLine(bootLines[0], bootLines[0].dataset.text || "", 32);
-    await sleep(80);
+    await sleep(70);
   }
 
   if (bootLines[1]) {
     await typeLine(bootLines[1], bootLines[1].dataset.text || "", 32);
-    await sleep(80);
-  }
-
-  if (projectPanel) {
-    gsap.fromTo(
-      projectPanel,
-      { opacity: 0, y: 24, scale: 0.985 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power3.out"
-      }
-    );
+    await sleep(70);
   }
 
   if (bootLines[2]) {
     await typeLine(bootLines[2], bootLines[2].dataset.text || "", 32, true);
-    await sleep(100);
+    await sleep(60);
   }
 
-  gsap.to(topLinks, {
-    opacity: 1,
-    y: 0,
-    duration: 0.35,
-    stagger: 0.06,
-    ease: "power2.out"
-  });
+  const tl = gsap.timeline();
 
-  gsap.to(projectCards, {
-    opacity: 1,
-    y: 0,
-    duration: 0.35,
-    stagger: 0.05,
-    ease: "power2.out",
-    delay: 0.1
-  });
+  if (topLinks.length) {
+    tl.to(topLinks, {
+      opacity: 1,
+      y: 0,
+      duration: 0.35,
+      stagger: 0.06,
+      ease: "power2.out"
+    });
+  }
+
+  if (projectPanel) {
+    tl.to(projectPanel, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      ease: "power3.out"
+    }, "-=0.15");
+  }
+
+  if (projectCards.length) {
+    tl.to(projectCards, {
+      opacity: 1,
+      y: 0,
+      duration: 0.35,
+      stagger: 0.05,
+      ease: "power2.out"
+    }, "<0.08");
+  }
 });
