@@ -13,6 +13,8 @@ body.projects-page-body {
 }
 
 .project-detail-panel {
+  opacity: 0;
+  visibility: hidden;
   clip-path: none;
   width: min(1360px, 100%);
   background: var(--bg-panel);
@@ -21,6 +23,7 @@ body.projects-page-body {
   position: relative;
   clip-path: polygon(0 0, 95% 0, 100% 14%, 100% 100%, 4% 100%, 0 84%);
   box-shadow: 0 0 0 1px rgba(255, 216, 74, 0.08), 0 0 24px rgba(53, 224, 255, 0.08);
+  transform: translateY(24px) scale(0.985);
 }
 
 .project-detail-panel::before {
@@ -179,17 +182,14 @@ body.projects-page-body {
   right: 240px;
   z-index: 4;
   opacity: 0;
+  visibility: hidden;
   transform: scale(0.85);
-}
-
-.project-detail-panel {
-  opacity: 0;
-  transform: translateY(24px) scale(0.985);
 }
 
 .panel-tag {
   opacity: 0;
   transform: translateX(12px);
+  visibility: hidden;
 }
 
 /* Footer */

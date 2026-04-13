@@ -18,7 +18,7 @@ async function typeLine(element, text, speed = 32, keepCursor = false) {
   }
 }
 
-window.addEventListener("load", async () => {
+window.addEventListener("DOMContentLoaded", async () => {
   const bootLines = document.querySelectorAll(".boot-line");
   const topLinks = document.querySelectorAll(".top-links a");
   const detailPanel = document.querySelector(".project-detail-panel");
@@ -33,27 +33,27 @@ window.addEventListener("load", async () => {
   });
 
   if (topLinks.length) {
-    gsap.set(topLinks, { opacity: 0, y: -10 });
+    gsap.set(topLinks, { autoAlpha: 0, y: -10 });
   }
 
   if (detailPanel) {
-    gsap.set(detailPanel, { opacity: 0, y: 24, scale: 0.985 });
+    gsap.set(detailPanel, { autoAlpha: 0, y: 24, scale: 0.985 });
   }
 
   if (detailHeader) {
-    gsap.set(detailHeader, { opacity: 0, y: 12 });
+    gsap.set(detailHeader, { autoAlpha: 0, y: 12 });
   }
 
   if (markdownNodes.length) {
-    gsap.set(markdownNodes, { opacity: 0, y: 14 });
+    gsap.set(markdownNodes, { autoAlpha: 0, y: 14 });
   }
 
   if (panelTag) {
-    gsap.set(panelTag, { opacity: 0, x: 12 });
+    gsap.set(panelTag, { autoAlpha: 0, x: 12 });
   }
 
   if (statusBadge) {
-    gsap.set(statusBadge, { opacity: 0, scale: 0.85 });
+    gsap.set(statusBadge, { autoAlpha: 0, scale: 0.85 });
   }
 
   if (bootLines[0]) {
@@ -65,7 +65,7 @@ window.addEventListener("load", async () => {
 
   if (topLinks.length) {
     tl.to(topLinks, {
-      opacity: 1,
+      autoAlpha: 1,
       y: 0,
       duration: 0.35,
       stagger: 0.06,
@@ -75,7 +75,7 @@ window.addEventListener("load", async () => {
 
   if (detailPanel) {
     tl.to(detailPanel, {
-      opacity: 1,
+      autoAlpha: 1,
       y: 0,
       scale: 1,
       duration: 0.7,
@@ -85,7 +85,7 @@ window.addEventListener("load", async () => {
 
   if (detailHeader) {
     tl.to(detailHeader, {
-      opacity: 1,
+      autoAlpha: 1,
       y: 0,
       duration: 0.4,
       ease: "power2.out"
@@ -94,7 +94,7 @@ window.addEventListener("load", async () => {
 
   if (panelTag) {
     tl.to(panelTag, {
-      opacity: 1,
+      autoAlpha: 1,
       x: 0,
       duration: 0.3,
       ease: "power2.out"
@@ -103,7 +103,7 @@ window.addEventListener("load", async () => {
 
   if (statusBadge) {
     tl.to(statusBadge, {
-      opacity: 1,
+      autoAlpha: 1,
       scale: 1,
       duration: 0.25,
       ease: "back.out(1.6)"
@@ -112,7 +112,7 @@ window.addEventListener("load", async () => {
 
   if (markdownNodes.length) {
     tl.to(markdownNodes, {
-      opacity: 1,
+      autoAlpha: 1,
       y: 0,
       duration: 0.28,
       stagger: 0.03,
