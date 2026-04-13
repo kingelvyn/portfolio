@@ -28,6 +28,7 @@ ___
 - HTTP / CSS / Markdown / JavaScript
 - Creating low resource intensive images
 - Improved scalability by externalizing content into markdown files
+- Sorted projects by status and alphabetical
 
 ___
 
