@@ -179,7 +179,7 @@ body.projects-page-body {
 .detail-status-badge {
   position: absolute;
   top: 26px;
-  right: 20px;
+  right: 220px;
   z-index: 4;
 }
 
