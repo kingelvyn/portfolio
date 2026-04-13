@@ -1,67 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Elvyn's Portfolio</title>
-    <link rel="stylesheet" href="/static/style.css?v=20250509">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elvyn // Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/static/css/style-cyberpunk.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#intro">Home</a>
-            <a> | </a>
-            <a href="/static/resume-new.pdf?v=20260324" target="_blank">View Resume</a>
-            <a> | </a>
-            <a href="https://github.com/kingelvyn?tab=repositories" target="_blank">Github Repo's</a>
-        </nav>
-    </header>
+  <div class="background-grid"></div>
+  <div class="background-glow"></div>
+  <div class="scanlines"></div>
 
-    <main>
-        <section id="intro">
-            <h1>Introduction</h1>
-            <p>
-                Hey there! My name is Elvyn Cachapero and I am a recent Computer Engineering graduate from LSU with a passion in DIY,
-                automation, building/creating, technology, and self-hosting tools. With my passion and curiosity, I plan on learning,
-                developing, and sharing my new and upcoming projects through this personal portfolio!
+  <div class="top-links">
+    <a href="/static/resume-new.pdf" target="_blank" rel="noopener noreferrer">RESUME</a>
+    <a href="https://github.com/kingelvyn" target="_blank" rel="noopener noreferrer">GITHUB</a>
+    <a href="https://www.linkedin.com/in/the-elvyn/" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+    <a href="mailto:ecacha1@lsu.edu">EMAIL</a>
+  </div>
+
+  <main class="hero">
+    <div class="boot-sequence">
+      <p class="boot-line" data-text="Establishing neural link..."></p>
+      <p class="boot-line" data-text="Authenticating user: ELVYN"></p>
+      <p class="boot-line" data-text="Access granted!"></p>
+      <p class="boot-line" data-text="Welcome back"></p>
+    </div>
+  
+    <div class="hero-layout">
+      <section class="hero-content">
+        <div class="panel-tag">PERSONAL DOSSIER</div>
+  
+        <div class="hero-main">
+          <div class="hero-left">
+            <div class="status-row">
+              <span>STATUS: <span class="status-online">ONLINE</span></span>
+              <span>VERSION: <span class="status-version">V2.0</span></span>
+            </div>
+  
+            <h1>ELVYN CACHAPERO</h1>
+            <h2>EMBEDDED // AUTOMATION // DEVELOPMENT</h2>
+  
+            <h3 class="degree-line">
+              B.S. in Computer Engineering, Louisiana State University (LSU), 2025
+            </h3>
+  
+            <p class="hero-description intro-line">
+              User enjoys building practical systems across software, hardware, self-hosting, and creative engineering. View more info below.
             </p>
-            <img src="/static/images/headshot.jpeg" alt="headshot" width="150">
-        </section>
+  
+            <nav class="menu">
+              <a href="#profile">PROFILE</a>
+              <a href="#projects">PROJECTS</a>
+            </nav>
+          </div>
+        </div>
+      </section>
+  
+      <aside class="portrait-panel" aria-label="Profile image">
+        <div class="portrait-label">USER_IMAGE</div>
+        <div class="headshot-frame">
+          <img
+            src="/static/images/headshot.jpeg"
+            alt="Headshot of Elvyn Cachapero"
+            class="headshot-image"
+          >
+        </div>
+  
+        <div class="portrait-meta">
+          <p class="meta-line">&gt; LOCATION: BATON ROUGE, LA</p>
+          <p class="meta-line">&gt; BUILD: PORTFOLIO V2</p>
+          <p class="meta-line">&gt; STATUS: ACTIVE</p>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>
-                Below is a list of current, upcoming, or planned projects. Click the hyperlink to learn more!
-            </p>
-            <ul>
-                {{ range .}}
-                <li>
-                    <strong><a href="/projects/{{ .Slug }}"> {{ .Title }}:</a></strong> {{ .Description }}
-                </li>
-                {{ end }}
-            </ul>
-        </section>
+  <footer class="site-footer">
+    <p>&copy; 2026 Elvynprise</p>
+  </footer>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-            <li><strong>Programming Languages:</strong> Python, C++, Go, Java, Verilog, Matlab, ARM Assembly, MIPS Assembly, PLC</li>
-            <li><strong>Front End Development:</strong> JavaScript, HTML, CSS, Markdown, React, Web Scraping / Parsing</li>
-            <li><strong>Tools:</strong> Xilinx Vivado, PSPICE, Matlab, Keil uVision, LogixPro500, Microsoft Office, Git Version Control</li>
-            <li><strong>Hardware:</strong> Soldering, Oscilloscope use, Multimeter, PCB diagnostics, Circuit analysis</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Contact / Links</h2>
-            <p>Email: <a href="mailto:elvyncachapero@gmail.com">elvyncachapero@gmail.com</a></p>
-            <p>Linkedin: <a href="https://www.linkedin.com/in/the-elvyn/">Linkedin Profile</a></p>
-            <p>Github: <a href ="https://github.com/kingelvyn?tab=repositories">Github Repo's</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Elvynprise </p>
-    </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="/static/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Elvyn's Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css?v=20250509">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#intro">Home</a>
+            <a> | </a>
+            <a href="/static/resume-new.pdf?v=20260324" target="_blank">View Resume</a>
+            <a> | </a>
+            <a href="https://github.com/kingelvyn?tab=repositories" target="_blank">Github Repo's</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h1>Introduction</h1>
+            <p>
+                Hey there! My name is Elvyn Cachapero and I am a recent Computer Engineering graduate from LSU with a passion in DIY,
+                automation, building/creating, technology, and self-hosting tools. With my passion and curiosity, I plan on learning,
+                developing, and sharing my new and upcoming projects through this personal portfolio!
+            </p>
+            <img src="/static/images/headshot.jpeg" alt="headshot" width="150">
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>
+                Below is a list of current, upcoming, or planned projects. Click the hyperlink to learn more!
+            </p>
+            <ul>
+                {{ range .}}
+                <li>
+                    <strong><a href="/projects/{{ .Slug }}"> {{ .Title }}:</a></strong> {{ .Description }}
+                </li>
+                {{ end }}
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+            <li><strong>Programming Languages:</strong> Python, C++, Go, Java, Verilog, Matlab, ARM Assembly, MIPS Assembly, PLC</li>
+            <li><strong>Front End Development:</strong> JavaScript, HTML, CSS, Markdown, React, Web Scraping / Parsing</li>
+            <li><strong>Tools:</strong> Xilinx Vivado, PSPICE, Matlab, Keil uVision, LogixPro500, Microsoft Office, Git Version Control</li>
+            <li><strong>Hardware:</strong> Soldering, Oscilloscope use, Multimeter, PCB diagnostics, Circuit analysis</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact / Links</h2>
+            <p>Email: <a href="mailto:elvyncachapero@gmail.com">elvyncachapero@gmail.com</a></p>
+            <p>Linkedin: <a href="https://www.linkedin.com/in/the-elvyn/">Linkedin Profile</a></p>
+            <p>Github: <a href ="https://github.com/kingelvyn?tab=repositories">Github Repo's</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Elvynprise </p>
+    </footer>
+
+</body>
+</html>
