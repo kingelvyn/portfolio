@@ -57,8 +57,8 @@ window.addEventListener("load", async () => {
   }
 
   if (bootLines[0]) {
-    await typeLine(bootLines[0], bootLines[0].dataset.text || "", 32);
-    await sleep(70);
+    await typeLine(bootLines[0], bootLines[0].dataset.text || "", 32, true);
+    await sleep(60);
   }
 
   const tl = gsap.timeline();
