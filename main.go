@@ -123,7 +123,7 @@ func projectsRouter(w http.ResponseWriter, r *http.Request) {
 	rendered := blackfriday.Run(mdBytes)
 	selected.HTMLContent = template.HTML(rendered)
 
-	tmpl := template.Must(template.ParseFiles("templates/project.html"))
+	tmpl := template.Must(template.ParseFiles("templates/project-single.html"))
 	err = tmpl.Execute(w, selected)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
