@@ -34,19 +34,18 @@
 
   <main class="project-detail-page">
     <section class="project-detail-panel">
-      <div class="detail-header">
-        <div class="detail-meta">
-          <span
-                class="status-dot {{if eq .Status "active"}}status-dot-active{{else if eq .Status "wip"}}status-dot-wip{{end}}"
-                aria-label="{{.Status}} status"
-                title="{{.Status}}">
-          </span>
-        </div>
-
-        <h1>{{.Title}}</h1>
-        <p>{{.Description}}</p>
+      <div
+            class="status-dot {{if eq .Status "active"}}status-dot-active{{else if eq .Status "wip"}}status-dot-wip{{end}}"
+            aria-label="{{.Status}} status"
+            title="{{.Status}}">
       </div>
 
+      <div class="panel-tag">PROJECT RECORD</div>
+    
+      <div class="project-detail-actions">
+        <a class="detail-btn" href="/projects">← RETURN TO ARCHIVE</a>
+      </div>
+    
       <article class="project-markdown">
         {{.HTMLContent}}
       </article>

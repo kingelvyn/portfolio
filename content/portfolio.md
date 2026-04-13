@@ -6,8 +6,8 @@
 > Dynamic portfolio website hosted via my homelab server created in Go to develop and display my skills.
 
 <div style="text-align:center;">
-  <img src="/static/images/portfolio.png" alt="Screenshot Portfolio" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-  <img src="/static/images/portfolio-new.png" alt="Screenshot Portfolio" style="max-width:60%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="/static/images/portfolio.png" alt="Screenshot Portfoliov1" style="max-width:48%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+  <img src="/static/images/portfolio-new.png" alt="Screenshot Portfoliov2" style="max-width:48%; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15);">
 </div>
 
 ___

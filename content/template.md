@@ -15,7 +15,7 @@ ___
 
 - Feature list
 
-### [Video(s):](https://lsumail2-my.sharepoint.com/:f:/g/personal/ecacha1_lsu_edu/Eg9fbSZKnYtBkltUtrdNZuYBayHBqVfP1zNsWUQfvVmdEQ?e=bEeCs3)
+### [Video(s):](link)
 
 <div style="display:flex; justify-content:center; margin-top:1em;">
   

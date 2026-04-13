@@ -21,13 +21,7 @@ ___
     - Receive all perks (map-specific)
 - Reward notification texts
 - Invalid reward reroller / fallback reward
-- Twitch integration (Streamer.bot specifically)
-
-### [Video(s):]()
-
-<div style="display:flex; justify-content:center; margin-top:1em;">
-
-</div>
+- Twitch integration (Streamer.bot replacement)
 
 ### Links:
 - [Github Repo](https://github.com/kingelvyn/bo2-zm-streamer-interactive)
