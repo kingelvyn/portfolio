@@ -25,6 +25,8 @@ window.addEventListener("load", async () => {
   const detailHeader = document.querySelector(".detail-header");
   const markdownNodes = document.querySelectorAll(".project-markdown > *");
   const archiveButton = document.querySelector(".detail-btn");
+  const panelTag = document.querySelector(".panel-tag");
+  const statusBadge = document.querySelector(".detail-status-badge");
 
   bootLines.forEach((line) => {
     line.textContent = "";
@@ -32,6 +34,10 @@ window.addEventListener("load", async () => {
 
   if (topLinks.length) {
     gsap.set(topLinks, { opacity: 0, y: -10 });
+  }
+
+  if (detailPanel) {
+    gsap.set(detailPanel, { opacity: 0, y: 24, scale: 0.985 });
   }
 
   if (detailHeader) {
@@ -42,37 +48,23 @@ window.addEventListener("load", async () => {
     gsap.set(markdownNodes, { opacity: 0, y: 14 });
   }
 
+  if (panelTag) {
+    gsap.set(panelTag, { opacity: 0, x: 12 });
+  }
+
+  if (statusBadge) {
+    gsap.set(statusBadge, { opacity: 0, scale: 0.85 });
+  }
+
   if (bootLines[0]) {
     await typeLine(bootLines[0], bootLines[0].dataset.text || "", 32);
-    await sleep(80);
+    await sleep(70);
   }
 
-  if (bootLines[1]) {
-    await typeLine(bootLines[1], bootLines[1].dataset.text || "", 32);
-    await sleep(80);
-  }
-
-  if (detailPanel) {
-    gsap.fromTo(
-      detailPanel,
-      { opacity: 0, y: 24, scale: 0.985 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power3.out"
-      }
-    );
-  }
-
-  if (bootLines[2]) {
-    await typeLine(bootLines[2], bootLines[2].dataset.text || "", 32, true);
-    await sleep(100);
-  }
+  const tl = gsap.timeline();
 
   if (topLinks.length) {
-    gsap.to(topLinks, {
+    tl.to(topLinks, {
       opacity: 1,
       y: 0,
       duration: 0.35,
@@ -81,24 +73,51 @@ window.addEventListener("load", async () => {
     });
   }
 
+  if (detailPanel) {
+    tl.to(detailPanel, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      ease: "power3.out"
+    }, "-=0.15");
+  }
+
   if (detailHeader) {
-    gsap.to(detailHeader, {
+    tl.to(detailHeader, {
       opacity: 1,
       y: 0,
       duration: 0.4,
       ease: "power2.out"
-    });
+    }, "<0.08");
+  }
+
+  if (panelTag) {
+    tl.to(panelTag, {
+      opacity: 1,
+      x: 0,
+      duration: 0.3,
+      ease: "power2.out"
+    }, "<0.02");
+  }
+
+  if (statusBadge) {
+    tl.to(statusBadge, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.25,
+      ease: "back.out(1.6)"
+    }, "<0.02");
   }
 
   if (markdownNodes.length) {
-    gsap.to(markdownNodes, {
+    tl.to(markdownNodes, {
       opacity: 1,
       y: 0,
-      duration: 0.3,
+      duration: 0.28,
       stagger: 0.03,
-      ease: "power2.out",
-      delay: 0.1
-    });
+      ease: "power2.out"
+    }, "<0.08");
   }
 
   if (archiveButton) {
