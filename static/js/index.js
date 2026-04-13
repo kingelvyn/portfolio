@@ -27,7 +27,6 @@ window.addEventListener("load", async () => {
   const portraitMeta = document.querySelectorAll(".portrait-meta .meta-line");
   const portraitLabel = document.querySelector(".portrait-label");
 
-  // Safety checks so the script doesn't break if one section is missing
   bootLines.forEach((line) => {
     line.textContent = "";
   });
@@ -38,6 +37,10 @@ window.addEventListener("load", async () => {
 
   if (topLinks.length) {
     gsap.set(topLinks, { opacity: 0, y: -10 });
+  }
+
+  if (heroCard) {
+    gsap.set(heroCard, { opacity: 0, y: 24, scale: 0.985 });
   }
 
   if (portraitPanel) {
@@ -52,45 +55,30 @@ window.addEventListener("load", async () => {
     gsap.set(portraitMeta, { opacity: 0, y: 8 });
   }
 
-  // Type first two lines
   if (bootLines[0]) {
     await typeLine(bootLines[0], bootLines[0].dataset.text || "", 32);
-    await sleep(80);
+    await sleep(70);
   }
 
   if (bootLines[1]) {
     await typeLine(bootLines[1], bootLines[1].dataset.text || "", 32);
-    await sleep(80);
-  }
-
-  // Bring in card while final boot line types
-  if (heroCard) {
-    gsap.fromTo(
-      heroCard,
-      { opacity: 0, y: 24, scale: 0.985 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: "power3.out"
-      }
-    );
+    await sleep(70);
   }
 
   if (bootLines[2]) {
     await typeLine(bootLines[2], bootLines[2].dataset.text || "", 32);
-    await sleep(90);
+    await sleep(70);
   }
 
   if (bootLines[3]) {
     await typeLine(bootLines[3], bootLines[3].dataset.text || "", 32, true);
-    await sleep(100);
+    await sleep(60);
   }
 
-  // Animate top links
+  const tl = gsap.timeline();
+
   if (topLinks.length) {
-    gsap.to(topLinks, {
+    tl.to(topLinks, {
       opacity: 1,
       y: 0,
       duration: 0.35,
@@ -99,51 +87,54 @@ window.addEventListener("load", async () => {
     });
   }
 
-  // Animate portrait panel slightly after the card
+  if (heroCard) {
+    tl.to(heroCard, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.75,
+      ease: "power3.out"
+    }, "-=0.15");
+  }
+
   if (portraitPanel) {
-    gsap.to(portraitPanel, {
+    tl.to(portraitPanel, {
       opacity: 1,
       x: 0,
-      duration: 0.55,
-      ease: "power2.out",
-      delay: 0.08
-    });
+      duration: 0.5,
+      ease: "power2.out"
+    }, "<0.08");
   }
 
   if (portraitLabel) {
-    gsap.to(portraitLabel, {
-      opacity: 1,
-      y: 0,
-      duration: 0.35,
-      ease: "power2.out",
-      delay: 0.18
-    });
-  }
-
-  if (portraitMeta.length) {
-    gsap.to(portraitMeta, {
+    tl.to(portraitLabel, {
       opacity: 1,
       y: 0,
       duration: 0.3,
-      stagger: 0.08,
-      ease: "power2.out",
-      delay: 0.24
-    });
+      ease: "power2.out"
+    }, "<0.08");
   }
 
-  // Animate menu buttons last
+  if (portraitMeta.length) {
+    tl.to(portraitMeta, {
+      opacity: 1,
+      y: 0,
+      duration: 0.28,
+      stagger: 0.07,
+      ease: "power2.out"
+    }, "<0.05");
+  }
+
   if (menuItems.length) {
-    gsap.to(menuItems, {
+    tl.to(menuItems, {
       opacity: 1,
       x: 0,
-      duration: 0.35,
-      stagger: 0.08,
-      ease: "power2.out",
-      delay: 0.12
-    });
+      duration: 0.32,
+      stagger: 0.07,
+      ease: "power2.out"
+    }, "<0.02");
   }
 
-  // Main menu hover effects only
   menuItems.forEach((item) => {
     item.addEventListener("mouseenter", () => {
       gsap.to(item, {
