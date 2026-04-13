@@ -129,7 +129,7 @@ func projectsRouter(w http.ResponseWriter, r *http.Request) {
 	}
 
 	mdPath := filepath.Join("content", slug+".md")
-	mdBytes, err := ioutil.ReadFile(mdPath)
+	mdBytes, err := os.ReadFile(mdPath)
 	if err != nil {
 		http.NotFound(w, r)
 		return

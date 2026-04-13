@@ -18,7 +18,7 @@ ___
 - Containerized with Docker for consistent deployment and management
 - Configured reverse proxy with Nginx and Cloudflare for domain resolution, HTTPS, and DNS management
 - Manages files with Git for version control
-- Implements JavaScript and CSS styling
+- Implements JavaScript and CSS styling (v2)
 
 ### Skills used / Developed:
 

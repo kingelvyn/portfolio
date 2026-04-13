@@ -110,11 +110,41 @@ body.skills-page-body {
   opacity: 0.65;
 }
 
-.skills-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+.skills-actions .detail-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-width: 260px;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid rgba(53, 224, 255, 0.22);
+  background: rgba(255, 255, 255, 0.015);
+  color: var(--cyan);
+  text-decoration: none;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.skills-actions .detail-btn:visited {
+  color: var(--cyan);
+}
+
+.skills-actions .detail-btn:hover,
+.skills-actions .detail-btn:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--yellow);
+  box-shadow: 0 0 16px rgba(255, 216, 74, 0.14);
+  background: rgba(255, 216, 74, 0.03);
+  color: var(--yellow);
+  outline: none;
 }
 
 @media (max-width: 980px) {
