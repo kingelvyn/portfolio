@@ -45,6 +45,7 @@ func main() {
 	http.HandleFunc("/projects", projectsRouter)
 	http.HandleFunc("/projects/", projectsRouter)
 	http.HandleFunc("/", indexHandler)
+	http.HandleFunc("/skills", skillsHandler)
 
 	fmt.Println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
@@ -59,6 +60,20 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tmpl := template.Must(template.ParseFiles("templates/index.html"))
+	err := tmpl.Execute(w, nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+	}
+}
+
+// Serves skills page
+func skillsHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/skills" {
+		http.NotFound(w, r)
+		return
+	}
+
+	tmpl := template.Must(template.ParseFiles("templates/skills.html"))
 	err := tmpl.Execute(w, nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
