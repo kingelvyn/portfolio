@@ -13,6 +13,7 @@ body.projects-page-body {
 }
 
 .project-detail-panel {
+  clip-path: none;
   width: min(1360px, 100%);
   background: var(--bg-panel);
   border: 1px solid rgba(53, 224, 255, 0.18);
@@ -132,6 +133,24 @@ body.projects-page-body {
   border: 1px solid rgba(53, 224, 255, 0.18);
 }
 
+.project-markdown a {
+  color: var(--cyan);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(53, 224, 255, 0.18);
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.project-markdown a:hover {
+  color: var(--yellow);
+  border-color: rgba(255, 216, 74, 0.35);
+}
+
+.project-markdown pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
 /* Status Indicator */
 
 .status-dot {
@@ -159,6 +178,18 @@ body.projects-page-body {
   top: 26px;
   right: 240px;
   z-index: 4;
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+.project-detail-panel {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+}
+
+.panel-tag {
+  opacity: 0;
+  transform: translateX(12px);
 }
 
 /* Footer */
@@ -183,13 +214,8 @@ body.projects-page-body {
     padding: 1rem 1rem 2rem;
   }
 
-  .project-detail-panel {
-    clip-path: none;
-    padding: 1.4rem;
-  }
-
   .detail-status-badge {
     top: 18px;
-    left: 20px;
+    left: 150px;
   }
 }
