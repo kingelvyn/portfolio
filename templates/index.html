@@ -12,8 +12,8 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="/static/css/style-cyberpunk.css?v=041326-01" />
-  <link rel="stylesheet" href="/static/css/index.css?v=041326-01" />
+  <link rel="stylesheet" href="/static/css/style-cyberpunk.css?v=041326-02" />
+  <link rel="stylesheet" href="/static/css/index.css?v=041326-02" />
 </head>
 <body class="home-page">
   <div class="background-grid"></div>
@@ -62,7 +62,7 @@
             </p>
   
             <nav class="menu">
-              <a href="/profile">PROFILE</a>
+              <button class="profile-trigger" type="button" data-profile-open>PROFILE</button>
               <a href="/projects">PROJECTS</a>
               <a href="/skills">SKILLS</a>
             </nav>
@@ -87,6 +87,34 @@
       </aside>
     </div>
   </main>
+
+  <div class="profile-modal" data-profile-modal aria-hidden="true">
+    <div class="profile-modal-backdrop" data-profile-close></div>
+
+    <div
+      class="profile-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="profile-modal-title"
+    >
+      <button
+        class="profile-modal-close"
+        type="button"
+        data-profile-close
+        aria-label="Close profile"
+      >
+        ×
+      </button>
+
+      <div class="profile-modal-label">PROFILE SNAPSHOT</div>
+      <h3 id="profile-modal-title">About User: Elvyn</h3>
+      <p>
+        Graduate with hands-on experience across embedded systems, automation, 
+        software development, self-hosting, and practical troubleshooting, with a focus on 
+        building systems that connect hardware, software, and real-world engineering work.
+      </p>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <p>&copy; 2026 Elvynprise</p>

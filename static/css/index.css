@@ -132,10 +132,11 @@ body.home-page {
 .menu {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 3rem;
 }
 
-.menu a {
+.menu a,
+.menu button {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -148,6 +149,13 @@ body.home-page {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: rgba(255, 255, 255, 0.015);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
@@ -156,7 +164,9 @@ body.home-page {
 }
 
 .menu a::before,
-.menu a::after {
+.menu a::after,
+.menu button::before,
+.menu button::after {
   content: "";
   position: absolute;
   width: 16px;
@@ -166,14 +176,16 @@ body.home-page {
   transition: opacity 0.2s ease;
 }
 
-.menu a::before {
+.menu a::before,
+.menu button::before {
   top: 6px;
   left: 6px;
   border-top: 2px solid var(--yellow);
   border-left: 2px solid var(--yellow);
 }
 
-.menu a::after {
+.menu a::after,
+.menu button::after {
   right: 6px;
   bottom: 6px;
   border-right: 2px solid var(--cyan);
@@ -181,7 +193,9 @@ body.home-page {
 }
 
 .menu a:hover,
-.menu a:focus-visible {
+.menu a:focus-visible,
+.menu button:hover,
+.menu button:focus-visible {
   transform: translateX(6px) skewX(-4deg);
   color: var(--yellow);
   border-color: var(--yellow);
@@ -194,7 +208,11 @@ body.home-page {
 .menu a:hover::before,
 .menu a:hover::after,
 .menu a:focus-visible::before,
-.menu a:focus-visible::after {
+.menu a:focus-visible::after,
+.menu button:hover::before,
+.menu button:hover::after,
+.menu button:focus-visible::before,
+.menu button:focus-visible::after {
   opacity: 1;
 }
 
@@ -277,7 +295,88 @@ body.home-page {
   clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
 }
 
-/* Footer */
+.profile-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.profile-modal.is-open {
+  display: flex;
+}
+
+.profile-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 7, 16, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.profile-modal-card {
+  position: relative;
+  width: min(480px, calc(100% - 2rem));
+  padding: 1.35rem 1.35rem 1.2rem;
+  background: var(--bg-panel);
+  border: 1px solid rgba(53, 224, 255, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(255, 216, 74, 0.08),
+    0 0 24px rgba(53, 224, 255, 0.12);
+  clip-path: polygon(0 0, 94% 0, 100% 12%, 100% 100%, 6% 100%, 0 88%);
+  z-index: 1;
+}
+
+.profile-modal-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 140px;
+  height: 5px;
+  background: var(--yellow);
+  box-shadow: 0 0 14px rgba(255, 216, 74, 0.35);
+}
+
+.profile-modal-label {
+  color: var(--cyan);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.profile-modal-card h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.profile-modal-card p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 40ch;
+  margin: 0;
+}
+
+.profile-modal-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.9rem;
+  border: 0;
+  background: transparent;
+  color: var(--yellow);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/*    Footer   */
 
 .site-footer {
   position: fixed;
@@ -348,7 +447,7 @@ body.home-page {
     flex-direction: column;
   }
 
-  .menu a {
+  .menu a, .menu button {
     width: 100%;
     min-width: 0;
   }

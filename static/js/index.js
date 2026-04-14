@@ -22,10 +22,14 @@ window.addEventListener("load", async () => {
   const bootLines = document.querySelectorAll(".boot-line");
   const heroCard = document.querySelector(".hero-content");
   const portraitPanel = document.querySelector(".portrait-panel");
-  const menuItems = document.querySelectorAll(".menu a");
+  const menuItems = document.querySelectorAll(".menu a, .menu button");
   const topLinks = document.querySelectorAll(".top-links a");
   const portraitMeta = document.querySelectorAll(".portrait-meta .meta-line");
   const portraitLabel = document.querySelector(".portrait-label");
+
+  const profileOpenBtn = document.querySelector("[data-profile-open]");
+  const profileModal = document.querySelector("[data-profile-modal]");
+  const profileCloseBtns = document.querySelectorAll("[data-profile-close]");
 
   bootLines.forEach((line) => {
     line.textContent = "";
@@ -133,6 +137,30 @@ window.addEventListener("load", async () => {
       stagger: 0.07,
       ease: "power2.out"
     }, "<0.02");
+  }
+
+  if (profileOpenBtn && profileModal) {
+    profileOpenBtn.addEventListener("click", () => {
+      profileModal.classList.add("is-open");
+      profileModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    });
+  
+    profileCloseBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        profileModal.classList.remove("is-open");
+        profileModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      });
+    });
+  
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && profileModal.classList.contains("is-open")) {
+        profileModal.classList.remove("is-open");
+        profileModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+    });
   }
 
   menuItems.forEach((item) => {
