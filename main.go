@@ -47,7 +47,6 @@ func main() {
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/skills", skillsHandler)
 
-	fmt.Println("New version detected...")
 	fmt.Println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
 }
