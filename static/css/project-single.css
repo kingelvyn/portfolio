@@ -3,53 +3,6 @@ body.projects-page-body {
   overflow-y: auto;
 }
 
-.top-links {
-  position: static;
-  z-index: 10;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.85rem;
-  width: min(760px, calc(100% - 2rem));
-  margin: 0 auto 0.75rem;
-  padding: 0.55rem 0.7rem;
-  background: rgba(6, 10, 20, 0.82);
-  border: 1px solid rgba(53, 224, 255, 0.08);
-  backdrop-filter: blur(8px);
-}
-
-.top-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 130px;
-  padding: 0.55rem 0.7rem;
-  border: 1px solid rgba(255, 77, 109, 0.35);
-  background: rgba(255, 77, 109, 0.04);
-  color: #ff5c7c;
-  text-decoration: none;
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition:
-    background 0.18s ease,
-    border-color 0.18s ease,
-    color 0.18s ease,
-    box-shadow 0.18s ease,
-    transform 0.18s ease;
-}
-
-.top-links a:hover,
-.top-links a:focus-visible {
-  background: rgba(255, 216, 74, 0.08);
-  border-color: var(--yellow);
-  color: var(--yellow);
-  box-shadow: 0 0 12px rgba(255, 216, 74, 0.14);
-  transform: translateY(-1px);
-  outline: none;
-}
-
 .project-detail-page {
   position: relative;
   z-index: 2;
@@ -63,7 +16,6 @@ body.projects-page-body {
 .project-detail-panel {
   opacity: 0;
   visibility: hidden;
-  clip-path: none;
   width: min(1360px, 100%);
   background: var(--bg-panel);
   border: 1px solid rgba(53, 224, 255, 0.18);
@@ -83,39 +35,6 @@ body.projects-page-body {
   height: 6px;
   background: var(--yellow);
   box-shadow: 0 0 14px rgba(255, 216, 74, 0.35);
-}
-
-.project-detail-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-}
-
-.detail-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 170px;
-  padding: 0.65rem 0.95rem;
-  border: 1px solid rgba(53, 224, 255, 0.22);
-  background: rgba(255, 255, 255, 0.015);
-  color: var(--cyan);
-  text-decoration: none;
-  font-family: "Orbitron", sans-serif;
-  font-size: 0.76rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-}
-
-.detail-btn:hover,
-.detail-btn:focus-visible {
-  transform: translateY(-2px);
-  border-color: var(--yellow);
-  box-shadow: 0 0 16px rgba(255, 216, 74, 0.14);
-  background: rgba(255, 216, 74, 0.03);
-  outline: none;
 }
 
 .project-markdown {
@@ -139,15 +58,6 @@ body.projects-page-body {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.65;
-}
-
-.project-markdown a {
-  color: var(--cyan);
-  text-decoration: none;
-}
-
-.project-markdown a:hover {
-  color: var(--yellow);
 }
 
 .project-markdown ul,
