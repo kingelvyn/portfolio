@@ -144,10 +144,21 @@ body.projects-page-body {
   transform: scale(0.85);
 }
 
+/* Yellow panel tag */
 .panel-tag {
-  opacity: 0;
-  transform: translateX(12px);
-  visibility: hidden;
+  position: absolute;
+  top: 20px;
+  right: 38px;
+  padding: 0.45rem 1rem;
+  background: var(--yellow);
+  color: #0a0d14;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  z-index: 3;
+  white-space: nowrap;
+  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
 }
 
 /* Footer */

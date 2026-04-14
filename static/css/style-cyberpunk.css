@@ -144,7 +144,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.85rem;
-  width: min(860px, calc(100% - 2rem));
+  width: min(780px, calc(100% - 2rem));
   margin: 0 auto 0.75rem;
   padding: 0.55rem 0.7rem;
   background: rgba(6, 10, 20, 0.82);
@@ -222,28 +222,6 @@ body {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.25rem;
-}
-
-body .top-links {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: nowrap !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 0.85rem !important;
-  width: min(920px, calc(100% - 2rem)) !important;
-  margin: 0 auto 0.75rem !important;
-  padding: 0.55rem 0.7rem !important;
-}
-
-body .top-links a {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex: 0 0 145px !important;
-  width: 145px !important;
-  min-width: 145px !important;
-  white-space: nowrap !important;
 }
 
 @keyframes blink-cursor {

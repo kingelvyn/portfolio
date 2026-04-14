@@ -45,6 +45,16 @@ window.addEventListener("load", async () => {
     await sleep(70);
   }
 
+  if (bootLines[1]) {
+    await typeLine(bootLines[1], bootLines[1].dataset.text || "", 32);
+    await sleep(70);
+  }
+
+  if (bootLines[2]) {
+    await typeLine(bootLines[2], bootLines[2].dataset.text || "", 32);
+    await sleep(70);
+  }
+
   const tl = gsap.timeline();
 
   if (topLinks.length) {

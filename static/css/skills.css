@@ -36,6 +36,23 @@ body.skills-page-body {
   box-shadow: 0 0 14px rgba(255, 216, 74, 0.35);
 }
 
+/* Yellow panel tag */
+.panel-tag {
+  position: absolute;
+  top: 20px;
+  right: 38px;
+  padding: 0.45rem 1rem;
+  background: var(--yellow);
+  color: #0a0d14;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  z-index: 3;
+  white-space: nowrap;
+  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
+}
+
 .skills-header {
   margin-bottom: 2rem;
   max-width: 900px;
