@@ -142,9 +142,9 @@ body {
   position: static;
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.85rem;
-  width: min(920px, calc(100% - 2rem));
+  width: min(860px, calc(100% - 2rem));
   margin: 0 auto 0.75rem;
   padding: 0.55rem 0.7rem;
   background: rgba(6, 10, 20, 0.82);
@@ -236,20 +236,16 @@ body {
   }
 
   .top-links {
-    position: static;
-    top: 10px;
-    transform: none;
-    width: min(100%, calc(100% - 1rem));
-    margin: 0 auto 1rem;
-    justify-content: center;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    width: min(430px, calc(100% - 1rem));
     gap: 0.6rem;
     padding: 0.45rem 0.5rem;
   }
 
-  .top-links a {
-    min-width: 110px;
-    font-size: 0.75rem;
-    padding: 0.52rem 0.75rem;
+  .top-links a:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 180px;
   }
 }
 
