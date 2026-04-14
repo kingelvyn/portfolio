@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        CACHE_BUSTER: 2
+        CACHE_BUSTER: 3
     container_name: portfolio
     ports:
       - "3000:3000"
