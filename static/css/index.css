@@ -9,7 +9,7 @@ body.home-page {
   position: relative;
   z-index: 2;
   min-height: 100vh;
-  padding: 4.75rem 6rem 2.5rem;
+  padding: 1rem 6rem 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
