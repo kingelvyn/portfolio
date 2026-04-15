@@ -3,5 +3,5 @@ services:
     image: ghcr.io/kingelvyn/portfolio:v1
     container_name: portfolio-v1
     ports:
-      - "3002:3000"
+      - "3003:3000"
     restart: unless-stopped
