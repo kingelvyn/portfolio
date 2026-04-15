@@ -40,15 +40,14 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/projects/", projectHandler)
-	http.healthCheck("/health", healthCheck)
+	http.HandleFunc("/health", healthCheck)
 
 	println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
 }
 
-func healthCheck (w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusOK)
-	_, _ = w.Write([]byte("ok"))
+func healthCheck(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("ok"))
 }
 
 // Serves index page (main page)
