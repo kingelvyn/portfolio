@@ -18,7 +18,13 @@ ___
 - Containerized with Docker for consistent deployment and management
 - Configured reverse proxy with Nginx and Cloudflare for domain resolution, HTTPS, and DNS management
 - Manages files with Git for version control
-- Implements JavaScript and CSS styling (v2)
+
+### V2 Update:
+- Added JavaScript and CSS styling and animations (v2)
+- Implements CI/CD workflow
+- Deprecated [v1 site](https://portfolio-legacy.elvynprise.xyz/)
+- Controlled deployments and images via Github Actions
+
 
 ### Skills used / Developed:
 
@@ -29,6 +35,8 @@ ___
 - Creating low resource intensive images
 - Improved scalability by externalizing content into markdown files
 - Sorted projects by status and alphabetical
+- CI/CD Implementations
+- Building enterprise-ready infrastructure
 
 ___
 
