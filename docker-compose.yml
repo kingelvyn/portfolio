@@ -1,13 +1,7 @@
-version: '3.8'
-
 services:
-  portfolio:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        CACHE_BUSTER: 3
-    container_name: portfolio
+  portfolio-v2:
+    image: ghcr.io/kingelvyn/portfolio:v2
+    container_name: portfolio-v2
     ports:
       - "3000:3000"
     restart: unless-stopped
