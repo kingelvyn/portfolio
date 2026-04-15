@@ -46,9 +46,15 @@ func main() {
 	http.HandleFunc("/projects/", projectsRouter)
 	http.HandleFunc("/", indexHandler)
 	http.HandleFunc("/skills", skillsHandler)
+	http.HandleFunc("/health", healthCheck)
 
 	fmt.Println("Server started at port :3000...")
 	http.ListenAndServe(":3000", nil)
+}
+
+// Health check 
+func healthCheck(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("ok"))
 }
 
 // Serves index page (main page)
