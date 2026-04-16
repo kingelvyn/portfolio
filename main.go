@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"html/template"
 	"net/http"
+	"os"
 	"path/filepath"
 	"sort"
 	"strings"
-	"os"
 
 	"github.com/russross/blackfriday/v2"
 )
@@ -27,8 +27,8 @@ var projects = []Project{
 	{Title: "Portfoli-Go", Slug: "portfolio", Description: "Self-hosted portfolio using Go", Status: "active"},
 	{Title: "Homelab", Slug: "homelab", Description: "Homelab for personal development", Status: "active"},
 	{Title: "GBA SP Reshell + USB-C Mod", Slug: "gameboy", Description: "Restored an old GBA SP with a new shell and USB-C mod", Status: "active"},
-	{Title: "Satisfaction75 Build", Slug: "satisfaction75", Description: "Build log for custom keyboard", Status: "active"},
-	{Title: "DAS - Direct-Attached Storage", Slug: "das", Description: "Expansion of homelab storage", Status: "active"},
+	{Title: "Satisfaction75 Build", Slug: "satisfaction75", Description: "Build log for custom keyboard (commissioned)", Status: "active"},
+	{Title: "NAS - Network Attached Storage", Slug: "das", Description: "Expansion of homelab storage", Status: "active"},
 	{Title: "SEO Optimizer", Slug: "seo-optimizer", Description: "Created an SEO Optimizer for websites", Status: "active"},
 	{Title: "DIY TV Ambilight", Slug: "ambilight", Description: "Replicated an ambilight system using open-sourced software and off-the-shelf products", Status: "active"},
 	{Title: "Home Surveillance", Slug: "home-cam", Description: "WIP", Status: "wip"},
@@ -36,6 +36,7 @@ var projects = []Project{
 	{Title: "Riftbound TCG Assistant", Slug: "riftbound-assistant", Description: "Assistant for Riftbound TCG assists in decision making and learning about ML", Status: "wip"},
 	{Title: "BO2 Interactive Zombies Mod", Slug: "bo2-mod", Description: "BO2 Zombies Mod allowing for interactive participation from streamer chat", Status: "active"},
 	{Title: "Cyberdeckv0.11", Slug: "cyberdeck", Description: "WIP", Status: "wip"},
+	{Title: "Motorized Blinds", Slug: "blinds", Description: "WIP", Status: "wip"},
 }
 
 func main() {
@@ -52,7 +53,7 @@ func main() {
 	http.ListenAndServe(":3000", nil)
 }
 
-// Health check 
+// Simple health check
 func healthCheck(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ok"))
 }

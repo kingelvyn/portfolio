@@ -1,4 +1,4 @@
-# DAS (Direct-Attached Storage)
+# NAS (Network Attached Storage)
 
 ---
 
@@ -16,6 +16,23 @@ ___
 - ZFS pool configured for RAIDZ1 for case of single hard drive failure
 - JBOD attached to Proxmox host to allow for network sharing of storage
 - Externally powered separate from Proxmox host server
+
+### Upgrade:
+- Upgraded to a dedicated PiNAS set-up
+- Separate NAS OS via Open Media Vault (OMV)
+- [3D-Printed structure](https://makerworld.com/en/models/1605027-raspberry-pi-5-based-4-bay-nas#profileId-1692368)
+
+### BOM:
+| Part | Price |
+| -------- | -------- |
+| RPi 5 4gb | ~$80 |
+| Radxa SATA Hat | ~$80 |
+| Noctua NF-A8 Fan | ~$18 |
+| PSU (12V6A) | ~$16 |
+| Threaded Inserts | ~$10 |
+| SATA Extenders | ~$20 |
+| Total | ~$220 |
+
 
 ### Skills Used / Developed:
 
