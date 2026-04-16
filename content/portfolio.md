@@ -35,7 +35,7 @@ ___
 - Creating low resource intensive images
 - Improved scalability by externalizing content into markdown files
 - Sorted projects by status and alphabetical
-- CI/CD Implementations
+- CI/CD Implementations to automate versioning, building image, and deploying
 - Building enterprise-ready infrastructure
 
 ___
