@@ -2,6 +2,7 @@
 /server
 *.exe
 *.out
+.env
 
 # Dependency directories
 /vendor/

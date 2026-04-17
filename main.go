@@ -10,6 +10,7 @@ import (
 	"os"
 
 	"github.com/russross/blackfriday/v2"
+	"github.com/kingelvyn/portfolio/internal/chat"
 )
 
 type Project struct {
