@@ -61,11 +61,7 @@ func main() {
 	http.ListenAndServe(":3000", mux)
 }
 
-<<<<<<< HEAD
-// Simple health check
-=======
 // Health check
->>>>>>> chat-assistant
 func healthCheck(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ok"))
 }

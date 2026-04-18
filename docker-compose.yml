@@ -1,11 +1,6 @@
 services:
-<<<<<<< HEAD
   portfolio-v2:
     image: ghcr.io/kingelvyn/portfolio:v2-4da243a
-=======
-  portfolio-chat:
-    image: ghcr.io/kingelvyn/portfolio:v2-e8e64b8
->>>>>>> chat-assistant
     container_name: portfolio-v2
     ports:
       - "3006:3000"
