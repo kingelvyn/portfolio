@@ -4,7 +4,6 @@ on:
     branches:
       - main
       - v1
-      - chat-assistant
 
 permissions:
   contents: write
@@ -12,7 +11,7 @@ permissions:
 
 jobs:
   docker:
-    if: "!contains(github.event.head_commit.message, 'Deploy ')"
+    if: ${{ !contains(github.event.head_commit.message, 'Deploy ') }}
     runs-on: ubuntu-latest
 
     steps:
@@ -22,6 +21,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set branch variables
+        shell: bash
         run: |
           SHORT_SHA="${GITHUB_SHA::7}"
 
@@ -70,4 +70,4 @@ jobs:
 
       - name: Trigger Portainer webhook
         run: |
-          curl -X POST "${WEBHOOK_URL}"
+          curl --fail --show-error --silent -X POST "${WEBHOOK_URL}"
