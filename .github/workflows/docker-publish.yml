@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - v1
+      - chat-assistant
 
 permissions:
   contents: write
@@ -31,6 +32,10 @@ jobs:
           elif [ "${GITHUB_REF_NAME}" = "v1" ]; then
             echo "IMAGE_TAG_STABLE=v1" >> $GITHUB_ENV
             echo "IMAGE_TAG_IMMUTABLE=v1-${SHORT_SHA}" >> $GITHUB_ENV
+            echo "WEBHOOK_URL=${{ secrets.PORTFOLIOV2_WEBHOOK }}" >> $GITHUB_ENV
+          elif [ "${GITHUB_REF_NAME}" = "chat-assistant" ]; then
+            echo "IMAGE_TAG_STABLE=chat" >> $GITHUB_ENV
+            echo "IMAGE_TAG_IMMUTABLE=chat-${SHORT_SHA}" >> $GITHUB_ENV
             echo "WEBHOOK_URL=${{ secrets.PORTFOLIOV2_WEBHOOK }}" >> $GITHUB_ENV
           else
             echo "Unsupported branch"

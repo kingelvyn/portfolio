@@ -1,4 +1,4 @@
-module portfolio
+module github.com/kingelvyn/portfolio
 
 go 1.21
 

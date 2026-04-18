@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"sort"
 	"strings"
 
+	"github.com/kingelvyn/portfolio/internal/chat"
 	"github.com/russross/blackfriday/v2"
 )
 
@@ -40,20 +42,30 @@ var projects = []Project{
 }
 
 func main() {
-	fs := http.FileServer(http.Dir("static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	mux := http.NewServeMux()
 
-	http.HandleFunc("/projects", projectsRouter)
-	http.HandleFunc("/projects/", projectsRouter)
-	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/skills", skillsHandler)
-	http.HandleFunc("/health", healthCheck)
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	mux.HandleFunc("/projects", projectsRouter)
+	mux.HandleFunc("/projects/", projectsRouter)
+	mux.HandleFunc("/", indexHandler)
+	mux.HandleFunc("/skills", skillsHandler)
+	mux.HandleFunc("/health", healthCheck)
+
+	aiHandler, err := chat.NewHandler("content")
+	if err != nil {
+		log.Fatalf("chat handler init failed! %v", err)
+	}
+	mux.Handle("/api/chat", aiHandler)
 
 	fmt.Println("Server started at port :3000...")
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", mux)
 }
 
+<<<<<<< HEAD
 // Simple health check
+=======
+// Health check
+>>>>>>> chat-assistant
 func healthCheck(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ok"))
 }
