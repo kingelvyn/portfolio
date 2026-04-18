@@ -1,9 +1,9 @@
 services:
-  portfolio-v2:
+  portfolio-v2-chat:
     image: ghcr.io/kingelvyn/portfolio:v2-e8e64b8
     container_name: portfolio-v2
     ports:
       - "3006:3000"
     restart: unless-stopped
     environment:
-      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
