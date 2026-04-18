@@ -15,14 +15,12 @@ import (
 const (
 	maxInputLength = 500
 	apiTimeout     = 30 * time.Second
-	groqAPIURL     = "https://api.groq.com/openai/v1/chat/completions"
 )
 
 // Handler holds shared state for the chat endpoint.
 type Handler struct {
 	systemPrompt string
 	apiKey       string
-	model        string
 	limiter      *rateLimiter
 }
 
@@ -33,20 +31,14 @@ func NewHandler(knowledgeDir string) (*Handler, error) {
 		return nil, fmt.Errorf("loading knowledge: %w", err)
 	}
 
-	apiKey := os.Getenv("GROQ_API_KEY")
+	apiKey := os.Getenv("GEMINI_API_KEY")
 	if apiKey == "" {
-		return nil, fmt.Errorf("GROQ_API_KEY environment variable is not set")
-	}
-
-	model := os.Getenv("GROQ_MODEL")
-	if model == "" {
-		model = "llama3-8b-8192" // free, fast, good quality
+		return nil, fmt.Errorf("GEMINI_API_KEY environment variable is not set")
 	}
 
 	return &Handler{
 		systemPrompt: BuildSystemPrompt(knowledge),
 		apiKey:       apiKey,
-		model:        model,
 		limiter:      newRateLimiter(10, time.Minute),
 	}, nil
 }
@@ -84,9 +76,9 @@ func (h *Handler) handle(w http.ResponseWriter, r *http.Request) {
 
 	log.Printf("[chat] ip=%s msg_len=%d", realIP(r), len(req.Message))
 
-	reply, err := h.callGroq(req.Message)
+	reply, err := h.callGemini(req.Message)
 	if err != nil {
-		log.Printf("[chat] groq error: %v", err)
+		log.Printf("[chat] gemini error: %v", err)
 		jsonError(w, "AI service unavailable, please try again later", http.StatusServiceUnavailable)
 		return
 	}
@@ -97,33 +89,59 @@ func (h *Handler) handle(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(resp)
 }
 
-// ── Groq / OpenAI-compatible API ─────────────────────────────────────────────
+// ── Gemini API ────────────────────────────────────────────────────────────────
 
-type chatRequest struct {
-	Model    string        `json:"model"`
-	Messages []chatMessage `json:"messages"`
+type geminiRequest struct {
+	SystemInstruction geminiSystem    `json:"system_instruction"`
+	Contents          []geminiContent `json:"contents"`
 }
 
-type chatMessage struct {
-	Role    string `json:"role"`
-	Content string `json:"content"`
+type geminiSystem struct {
+	Parts []geminiPart `json:"parts"`
 }
 
-type chatResponse struct {
-	Choices []struct {
-		Message chatMessage `json:"message"`
-	} `json:"choices"`
+type geminiContent struct {
+	Role  string       `json:"role"`
+	Parts []geminiPart `json:"parts"`
+}
+
+type geminiPart struct {
+	Text string `json:"text"`
+}
+
+type geminiResponse struct {
+	Candidates []struct {
+		Content struct {
+			Parts []struct {
+				Text string `json:"text"`
+			} `json:"parts"`
+		} `json:"content"`
+	} `json:"candidates"`
 	Error *struct {
 		Message string `json:"message"`
 	} `json:"error,omitempty"`
 }
 
-func (h *Handler) callGroq(userMessage string) (string, error) {
-	payload := chatRequest{
-		Model: h.model,
-		Messages: []chatMessage{
-			{Role: "system", Content: h.systemPrompt},
-			{Role: "user", Content: userMessage},
+func (h *Handler) callGemini(userMessage string) (string, error) {
+	model := os.Getenv("GEMINI_MODEL")
+	if model == "" {
+		model = "gemini-2.5-flash"
+	}
+
+	url := fmt.Sprintf(
+		"https://generativelanguage.googleapis.com/v1beta/models/%s:generateContent?key=%s",
+		model, h.apiKey,
+	)
+
+	payload := geminiRequest{
+		SystemInstruction: geminiSystem{
+			Parts: []geminiPart{{Text: h.systemPrompt}},
+		},
+		Contents: []geminiContent{
+			{
+				Role:  "user",
+				Parts: []geminiPart{{Text: userMessage}},
+			},
 		},
 	}
 
@@ -132,17 +150,10 @@ func (h *Handler) callGroq(userMessage string) (string, error) {
 		return "", fmt.Errorf("marshaling request: %w", err)
 	}
 
-	httpReq, err := http.NewRequest(http.MethodPost, groqAPIURL, bytes.NewReader(body))
-	if err != nil {
-		return "", fmt.Errorf("building request: %w", err)
-	}
-	httpReq.Header.Set("Content-Type", "application/json")
-	httpReq.Header.Set("Authorization", "Bearer "+h.apiKey)
-
 	client := &http.Client{Timeout: apiTimeout}
-	resp, err := client.Do(httpReq)
+	resp, err := client.Post(url, "application/json", bytes.NewReader(body))
 	if err != nil {
-		return "", fmt.Errorf("calling Groq: %w", err)
+		return "", fmt.Errorf("calling Gemini: %w", err)
 	}
 	defer resp.Body.Close()
 
@@ -151,18 +162,18 @@ func (h *Handler) callGroq(userMessage string) (string, error) {
 		return "", fmt.Errorf("reading response: %w", err)
 	}
 
-	var groqResp chatResponse
-	if err := json.Unmarshal(raw, &groqResp); err != nil {
+	var geminiResp geminiResponse
+	if err := json.Unmarshal(raw, &geminiResp); err != nil {
 		return "", fmt.Errorf("decoding response: %w", err)
 	}
-	if groqResp.Error != nil {
-		return "", fmt.Errorf("groq API error: %s", groqResp.Error.Message)
+	if geminiResp.Error != nil {
+		return "", fmt.Errorf("gemini API error: %s", geminiResp.Error.Message)
 	}
-	if len(groqResp.Choices) == 0 {
-		return "", fmt.Errorf("no choices in groq response")
+	if len(geminiResp.Candidates) == 0 || len(geminiResp.Candidates[0].Content.Parts) == 0 {
+		return "", fmt.Errorf("empty response from Gemini")
 	}
 
-	return strings.TrimSpace(groqResp.Choices[0].Message.Content), nil
+	return strings.TrimSpace(geminiResp.Candidates[0].Content.Parts[0].Text), nil
 }
 
 func jsonError(w http.ResponseWriter, msg string, code int) {

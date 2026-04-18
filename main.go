@@ -3,14 +3,15 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"sort"
 	"strings"
-	"os"
 
-	"github.com/russross/blackfriday/v2"
 	"github.com/kingelvyn/portfolio/internal/chat"
+	"github.com/russross/blackfriday/v2"
 )
 
 type Project struct {
@@ -48,18 +49,18 @@ func main() {
 	mux.HandleFunc("/", indexHandler)
 	mux.HandleFunc("/skills", skillsHandler)
 	mux.HandleFunc("/health", healthCheck)
-	
-	aiHandler, err := chat.NewHandler("content/ai")
+
+	aiHandler, err := chat.NewHandler("content")
 	if err != nil {
 		log.Fatalf("chat handler init failed! %v", err)
 	}
 	mux.Handle("/api/chat", aiHandler)
 
 	fmt.Println("Server started at port :3000...")
-	http.ListenAndServe(":3000", nil)
+	http.ListenAndServe(":3000", mux)
 }
 
-// Health check 
+// Health check
 func healthCheck(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ok"))
 }

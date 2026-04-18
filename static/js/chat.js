@@ -31,7 +31,7 @@
 
     // Greeting
     appendMessage(messages, 'assistant',
-      "Hi! I'm Elvyn's portfolio assistant. Ask me about his background, skills, or projects.");
+      "Hi! I'm Elvyn's portfolio assistant. Ask me about his background, skills, or projects. Please understand I am not perfect and take responses with a grain of salt.");
 
     const form = el('form', { id: 'ai-chat-form' });
     const input = el('input', {
