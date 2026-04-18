@@ -9,6 +9,7 @@ on:
 
 jobs:
   build-and-test:
+    if: ${{ github.event_name == 'pull_request' || !contains(github.event.head_commit.message, 'Deploy ') }}
     runs-on: ubuntu-latest
 
     steps:
