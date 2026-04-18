@@ -71,3 +71,13 @@ jobs:
       - name: Trigger Portainer webhook
         run: |
           curl --fail --show-error --silent -X POST "${WEBHOOK_URL}"
+
+      - name: Notify via Discord
+        run: |
+          - name: Notify Discord
+  if: ${{ success() }}
+  run: |
+    curl --fail --show-error --silent \
+      -H "Content-Type: application/json" \
+      -d "{\"content\":\"Portfolio deploy triggered for ${GITHUB_REF_NAME} (${GITHUB_SHA::7}).\"}" \
+      "${{ secrets.DISCORD_WEBHOOK_URL }}"
