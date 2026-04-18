@@ -1,5 +1,5 @@
 services:
-  portfolio-v2-chat:
+  portfolio-chat:
     image: ghcr.io/kingelvyn/portfolio:v2-e8e64b8
     container_name: portfolio-v2
     ports:
