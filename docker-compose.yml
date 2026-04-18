@@ -3,7 +3,7 @@ services:
     image: ghcr.io/kingelvyn/portfolio:v2-4da243a
     container_name: portfolio-v2
     ports:
-      - "3006:3000"
+      - "3000:3000"
     restart: unless-stopped
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
