@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - v1
+      - chat-assistant
   pull_request:
 
 jobs:
