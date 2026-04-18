@@ -24,6 +24,7 @@ ___
 - Implements CI/CD workflow
 - Deprecated [v1 site](https://portfolio-legacy.elvynprise.xyz/)
 - Controlled deployments and images via Github Actions
+- Implemented AI assisted chatbot for simpler search
 
 
 ### Skills used / Developed:
