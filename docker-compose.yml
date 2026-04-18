@@ -1,6 +1,6 @@
 services:
   portfolio-v2:
-    image: ghcr.io/kingelvyn/portfolio:v2-01324de
+    image: ghcr.io/kingelvyn/portfolio:v2-bc296cb
     container_name: portfolio-v2
     ports:
       - "3000:3000"
